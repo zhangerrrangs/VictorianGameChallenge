@@ -1,0 +1,12 @@
+[text]
+text[0,0]=Start|scr_playerSpeaking(true)|
+text[1,0]=Hello|scr_playerSpeaking(false)|
+text[2,0]=Bye
+text[3,0]=(OPTION): Pie
+op0[3,0]=Yes:No:
+op1[3,0]=0,1|:0,2|:
+text[0,1]=1
+text[0,2]=2
+[config]
+[vars]
+vars=

@@ -1,0 +1,10 @@
+[text]
+text[0,0]=Hello0|scr_playerSpeaking(false)|
+text[1,0]=(OPTION): Pick one
+op0[1,0]=1:2:
+op1[1,0]=0,1|:0,2|:
+text[0,1]=Pickwed 1
+text[0,2]=Picked 2
+[config]
+[vars]
+vars=
