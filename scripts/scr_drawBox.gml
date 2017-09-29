@@ -13,7 +13,7 @@ txt = instance_create(argument1,argument2,argument3);
 with (txt)
 {
     padding=10;
-    max_width=view_wview[0]/3.33;
+    max_width=round(view_wview[0]*0.4);
     text=argument0;
     font=fnt_base;
     
