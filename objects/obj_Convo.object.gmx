@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Load chat system
-yTextSpawn = 1500;
+yTextSpawn = view_hview[0]*0.666;
+optionBoxSize = view_hview[0]*0.333;
 
 on0=0;
 on1=0;
@@ -54,10 +55,14 @@ for(i=0;i&lt;100;i++){
     lblText1[i]=-1
 }
 
+padding=10;
+max_width=round(view_wview[0]*0.4);
+font=fnt_base;
+font_size = font_get_size(font);
 
 chatMap=ds_map_create() //Map used for [var=xxx] tag!
 
-pid = 0;
+pid = 4;
 
 load_npcChat(pid);
 </string>

@@ -12,15 +12,14 @@ txt = instance_create(argument1,argument2,argument3);
 
 with (txt)
 {
-    padding=10;
-    max_width=round(view_wview[0]*0.4);
-    text=argument0;
-    font=fnt_base;
+    padding = other.padding;
+    max_width = other.max_width;
+    text = argument0;
+    font = other.font;
     
-    font_size = font_get_size(font);
+    font_size = other.font_size;
     
     draw_set_font(font);
-    
     box_width=scr_boxWidth(text);
     box_height=scr_boxHeight(text);
     

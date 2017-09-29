@@ -28,12 +28,7 @@
             <string>///Initialise variables
 
 alpha = 0;
-if(global.playerSpeaking)
-{
-    color = $D5E233;
-} else {
-    color = $FFFFFF;
-}
+color = $D5E233;
 
 depth -= instance_number(self.object_index);
 draw_set_circle_precision(128);
@@ -69,16 +64,16 @@ draw_set_color(color);
 
 //Other options
 //draw_sprite_stretched(sprite, subimg, x, y, w, h);
-draw_roundrect_ext(x, y, x + box_width, y + box_height, 20, 25, false);
+draw_roundrect_ext(x, y, x - box_width, y + box_height, 20, 25, false);
 
 draw_set_color(c_black);
 draw_set_font(font);
-draw_set_halign(fa_left);
+draw_set_halign(fa_right);
 draw_set_valign(fa_top);
 
 draw_text_ext
 (
-    x + padding,
+    x - padding,
     y + padding,
     text,
     font_size+(font_size/2),

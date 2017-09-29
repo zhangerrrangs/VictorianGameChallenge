@@ -28,12 +28,7 @@
             <string>///Initialise variables
 
 alpha = 0;
-if(global.playerSpeaking)
-{
-    color = $D5E233;
-} else {
-    color = $FFFFFF;
-}
+color = $FFFFFF;
 
 depth -= instance_number(self.object_index);
 draw_set_circle_precision(128);

@@ -28,6 +28,7 @@
             <string>///Initialise variables
 color = c_gray;
 optionID = -1;
+draw_set_circle_precision(128);
 </string>
           </argument>
         </arguments>
@@ -56,7 +57,7 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
     if(optionID != -1) {
         with(obj_convo) {
             scrNPCDialogOption(other.optionID);
-            scr_messageCreate();
+            scr_convoContinue();
         }
     } else {
         show_debug_message("IT FUCKED UP");
@@ -90,11 +91,11 @@ draw_set_alpha(1);
 //if (alpha &lt; 1) alpha += 0.05; //else alpha = 1;
 
 draw_set_color(color);
-draw_rectangle(x, y, x + box_width, y + box_height, false);
+//draw_rectangle(x, y, x + box_width, y + box_height, false);
 
 //Other options
 //draw_sprite_stretched(sprite, subimg, x, y, w, h);
-//draw_roundrect_ext(x, y, x + box_width, y + box_height, 30, 30, false);
+draw_roundrect_ext(x, y, x + box_width, y + box_height, 20, 25, false);
 
 draw_set_color(c_black);
 draw_set_font(font);

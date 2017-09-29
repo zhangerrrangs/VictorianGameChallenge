@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
-    <datafiles number="3" name="Dialog">
+  <datafiles number="4" name="datafiles">
+    <datafiles number="4" name="Dialog">
       <datafile>
         <name>0.txt</name>
         <exists>-1</exists>
@@ -56,6 +56,23 @@
         </ConfigOptions>
         <filename>3.txt</filename>
       </datafile>
+      <datafile>
+        <name>4.txt</name>
+        <exists>-1</exists>
+        <size>133</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>4.txt</filename>
+      </datafile>
     </datafiles>
   </datafiles>
   <NewExtensions/>
@@ -66,7 +83,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_messageCreate.gml</script>
+    <script>scripts\scr_convoContinue.gml</script>
     <script>scripts\scr_boxWidth.gml</script>
     <script>scripts\scr_boxHeight.gml</script>
     <script>scripts\scr_playerSpeaking.gml</script>
@@ -92,19 +109,19 @@
     <font>fonts\fnt_base</font>
   </fonts>
   <objects name="objects">
-    <object>objects\parNPC</object>
     <object>objects\obj_start</object>
     <objects name="Conversation">
-      <object>objects\obj_message</object>
+      <object>objects\obj_messagePlayer</object>
+      <object>objects\obj_messageOther</object>
       <object>objects\obj_convo</object>
-      <object>objects\object6</object>
       <object>objects\objControl</object>
       <object>objects\obj_option</object>
-      <object>objects\object7</object>
+      <object>objects\obj_banner</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rom_message</room>
+    <room>rooms\rom_menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
