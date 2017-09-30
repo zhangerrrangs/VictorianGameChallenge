@@ -33,10 +33,10 @@ alpha = 0;
 color = $D5E233;
 transition = true;
 
-alarm[0] = 60;
+alarm[0] = global.delay;
 
 depth -= instance_number(self.object_index);
-draw_set_circle_precision(128);
+draw_set_circle_precision(64);
 </string>
           </argument>
         </arguments>

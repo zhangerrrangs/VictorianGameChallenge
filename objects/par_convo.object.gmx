@@ -78,9 +78,8 @@ load_npcChat(pid);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Message specfic variables
-
-delay = 0.25;
+            <string>///Set message variables
+global.delay = room_speed * 0.5;
 
 yTextSpawn = view_hview[0]*0.666;
 optionBoxSize = view_hview[0]*0.333;
@@ -88,7 +87,7 @@ optionBoxSize = view_hview[0]*0.333;
 padding=10;
 max_width=round(view_wview[0]*0.4);
 font=fnt_base;
-font_size = font_get_size(font);
+font_size = font_get_size(font)
 </string>
           </argument>
         </arguments>

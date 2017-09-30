@@ -23,12 +23,12 @@ var messageID = scr_drawBox(str, 0, yTextSpawn, objType);
 messageID.convoID = id;
 
 with(obj_messageOther) {
-    y -= (scr_boxHeight(other.str) + (padding * 2));
+    y -= (scr_boxHeight(other.str) + (padding * 4));
     //show_debug_message(scr_boxHeight(other.str));
 }
 
 with(obj_messagePlayer) {
-    y -= (scr_boxHeight(other.str) + (padding * 2));
+    y -= (scr_boxHeight(other.str) + (padding * 4));
     //show_debug_message(scr_boxHeight(other.str));
 }
 

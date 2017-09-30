@@ -19,6 +19,8 @@ with (txt)
     
     font_size = other.font_size;
     
+    icon_size = ((font_size/2) + (padding * 2));
+
     draw_set_font(font);
     box_width=scr_boxWidth(text);
     box_height=scr_boxHeight(text);

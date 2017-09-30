@@ -27,16 +27,17 @@
             <kind>1</kind>
             <string>///Initialise variables
 x = 0;
-xAlignment = view_wview[0] * 0.05;
+xAlignment = view_wview[0] * 0.2;
 
 alpha = 0;
 color = $FFFFFF;
+icon_color = $D5E233;
 transition = true;
 
-alarm[0] = 60;
+alarm[0] = global.delay;
 
 depth -= instance_number(self.object_index);
-draw_set_circle_precision(128);
+draw_set_circle_precision(64);
 </string>
           </argument>
         </arguments>
@@ -88,7 +89,41 @@ if(transition) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw box
+            <string>///Draw icon
+icon_x = x - ((icon_size) + (padding * 2));
+icon_y = y + (icon_size);
+    
+draw_set_alpha(1);
+draw_set_color(icon_color);
+
+draw_circle(icon_x, icon_y, icon_size, false);
+
+draw_set_color(c_white);
+draw_set_font(font);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
+draw_text(icon_x - (icon_size - padding), icon_y, "PN")
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw message box
 
 draw_set_alpha(alpha);
 if (alpha &lt; 1) alpha += (0.000005 * delta_time); else alpha = 1;
