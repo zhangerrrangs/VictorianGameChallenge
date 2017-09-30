@@ -25,50 +25,43 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialise variables
-color = c_gray; 
-optionID = -1;
-draw_set_circle_precision(128);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Option control
+            <string>///Load chat system
+global.NPCdirectory="Dialog/";
+global.playerSpeaking = true;
 
-if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left)) {
-    if(optionID != -1) {
-        with(convoID) {
-            scrNPCDialogOption(other.optionID);
-            scr_convoContinue();
-        }
-    } else {
-        show_debug_message("IT FUCKED UP");
+on0=0;
+on1=0;
+
+for(i=0;i&lt;255;i++){
+    for(a=0;a&lt;50;a++){
+        line[i,a]="";//text
+        op0[i,a]=-1;//ds_list - stores which dialog it will jump to (eg: 1,0)
+        op1[i,a]=-1;//ds_list - stores text options (eg: "Who are you?")
     }
 }
+
+checkAmount=0;//amount of "convo(QuestID,QuestStep)" you have in your dialog tree
+for(i=0;i&lt;100;i++){
+    checkQuest[i]=-1;    //QuestID to check
+    checkON[i]=-1;       //Quest Step to check
+    checkText0[i]=-1;    //Equivalent to on0
+    checkText1[i]=-1;    //Equivalent to on1
+}
+
+lblAmount=0;
+for(i=0;i&lt;100;i++){
+    lbl[i]=-1
+    lblText0[i]=-1
+    lblText1[i]=-1
+}
+
+chatMap=ds_map_create() //Map used for [var=xxx] tag!
+
+load_npcChat(pid);
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,31 +78,17 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw box
+            <string>///Message specfic variables
 
-draw_set_alpha(1);
-//if (alpha &lt; 1) alpha += 0.05; //else alpha = 1;
+delay = 0.25;
 
-draw_set_color(color);
-//draw_rectangle(x, y, x + box_width, y + box_height, false);
+yTextSpawn = view_hview[0]*0.666;
+optionBoxSize = view_hview[0]*0.333;
 
-//Other options
-//draw_sprite_stretched(sprite, subimg, x, y, w, h);
-draw_roundrect_ext(x, y, x + box_width, y + box_height, 20, 25, false);
-
-draw_set_color(c_black);
-draw_set_font(font);
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-
-draw_text_ext
-(
-    x + padding,
-    y + padding,
-    text,
-    font_size+(font_size/2),
-    max_width
-);
+padding=10;
+max_width=round(view_wview[0]*0.4);
+font=fnt_base;
+font_size = font_get_size(font);
 </string>
           </argument>
         </arguments>

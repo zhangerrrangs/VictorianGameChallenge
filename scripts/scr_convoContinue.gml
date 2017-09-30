@@ -12,14 +12,15 @@ show_debug_message(str);
 //Move global if into just the variable
 if(global.playerSpeaking)
 {
-    var xTextSpawn = view_wview[0] * 0.95;
+    //var xTextSpawn = view_wview[0];
     var objType = obj_messagePlayer;
 } else {
-    var xTextSpawn = view_wview[0] * 0.05;
+    //var xTextSpawn = 0;
     var objType = obj_messageOther;
 }
 
-scr_drawBox(str, xTextSpawn, yTextSpawn, objType);
+var messageID = scr_drawBox(str, 0, yTextSpawn, objType);
+messageID.convoID = id;
 
 with(obj_messageOther) {
     y -= (scr_boxHeight(other.str) + (padding * 2));
@@ -34,7 +35,8 @@ with(obj_messagePlayer) {
 instance_destroy(obj_option);
     
 if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
-
+    messageID.transition = false;
+    
     optionSizes[0] = 0;
     var listSize = ds_list_size(op0[on0,on1]);
     var optionSpaceStart = round(view_hview[0] - optionBoxSize);
@@ -59,13 +61,12 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
         scr_drawBox(txt, view_wview[0]/2, yPosition, obj_option);
         
         with(obj_option) {
+            self.convoID = other.id
             self.optionID = other.i;
         }
     }
-} else {
-    scrNPCDialogContinue();
-    scr_convoContinue();
 }
+
 /*if p=0{
     //Draw without scripts
     var messageID = scr_createMessage(str, xTextSpawn, yTextSpawn, obj_message);

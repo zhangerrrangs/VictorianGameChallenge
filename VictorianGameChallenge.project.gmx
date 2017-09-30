@@ -111,12 +111,17 @@
   <objects name="objects">
     <object>objects\obj_start</object>
     <objects name="Conversation">
-      <object>objects\obj_messagePlayer</object>
-      <object>objects\obj_messageOther</object>
-      <object>objects\obj_convo</object>
-      <object>objects\objControl</object>
-      <object>objects\obj_option</object>
       <object>objects\obj_banner</object>
+      <objects name="Message">
+        <object>objects\obj_messageOther</object>
+        <object>objects\obj_messagePlayer</object>
+        <object>objects\obj_option</object>
+      </objects>
+      <objects name="Controllers">
+        <object>objects\objControl</object>
+        <object>objects\obj_convo</object>
+        <object>objects\par_convo</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
