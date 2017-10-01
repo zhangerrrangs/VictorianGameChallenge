@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initialise variables
 x = 0;
-xAlignment = view_wview[0] * 0.2;
+xAlignment = global.messageOtherAlign;
 
 alpha = 0;
 color = $FFFFFF;
@@ -90,8 +90,8 @@ if(transition) {
           <argument>
             <kind>1</kind>
             <string>///Draw icon
-icon_x = x - ((icon_size) + (padding * 2));
-icon_y = y + (icon_size);
+icon_x = x - ((global.icon_size) + (global.padding * 2));
+icon_y = y + (global.icon_size);
     
 draw_set_alpha(1);
 draw_set_color(icon_color);
@@ -102,7 +102,7 @@ draw_set_color(c_white);
 draw_set_font(font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
-draw_text(icon_x - (icon_size - padding), icon_y, "PN")
+draw_text(icon_x - (global.icon_size - global.padding), icon_y, "PN")
 </string>
           </argument>
         </arguments>
@@ -137,16 +137,16 @@ draw_set_color(color);
 draw_roundrect_ext(x, y, x + box_width, y + box_height, 20, 25, false);
 
 draw_set_color(c_black);
-draw_set_font(font);
+draw_set_font(global.font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 draw_text_ext
 (
-    x + padding,
-    y + padding,
+    x + global.padding,
+    y + global.padding,
     text,
-    font_size+(font_size/2),
+    global.font_size+(global.font_size/2),
     max_width
 );
 

@@ -104,6 +104,7 @@
         <script>scripts\draw_text_shadow_color_ext.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scr_endCredit.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_base</font>
@@ -111,7 +112,6 @@
   <objects name="objects">
     <object>objects\obj_start</object>
     <objects name="Conversation">
-      <object>objects\obj_banner</object>
       <objects name="Message">
         <object>objects\obj_messageOther</object>
         <object>objects\obj_messagePlayer</object>
@@ -121,6 +121,7 @@
         <object>objects\objControl</object>
         <object>objects\obj_convo</object>
         <object>objects\par_convo</object>
+        <object>objects\obj_mouseDrag</object>
       </objects>
     </objects>
   </objects>

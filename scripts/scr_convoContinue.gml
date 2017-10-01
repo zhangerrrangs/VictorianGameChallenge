@@ -1,5 +1,7 @@
 str="";
 
+//lastLine = line[on0,on1];
+
 var p=string_pos("|",line[on0,on1]);
 
 if p=0 {
@@ -19,7 +21,7 @@ if(global.playerSpeaking)
     var objType = obj_messageOther;
 }
 
-var messageID = scr_drawBox(str, 0, yTextSpawn, objType);
+var messageID = scr_drawBox(str, 0, global.yTextSpawn, objType);
 messageID.convoID = id;
 
 with(obj_messageOther) {

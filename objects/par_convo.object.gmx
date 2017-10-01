@@ -25,6 +25,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Conversation variables
+global.delay = room_speed * 0.5;
+
+global.optionBoxSize = view_hview[0]*0.333;
+global.yTextSpawn = view_hview[0] - global.optionBoxSize;
+global.bannerSize = view_hview[0] * 0.1;
+
+global.padding = 10;
+global.max_width = view_wview[0]*0.4;
+global.font = fnt_base;
+global.font_size = font_get_size(global.font);
+global.icon_size = ((global.font_size/2) + (global.padding * 2));
+
+global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
+global.messagePlayerAlign = view_wview[0] - global.padding;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Load chat system
 global.NPCdirectory="Dialog/";
 global.playerSpeaking = true;
@@ -78,16 +113,40 @@ load_npcChat(pid);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set message variables
-global.delay = room_speed * 0.5;
+            <string>///Create obj_mouseDrag
+instance_create(x, y, obj_mouseDrag);
 
-yTextSpawn = view_hview[0]*0.666;
-optionBoxSize = view_hview[0]*0.333;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw banner
+draw_rectangle_color(0, 0, view_wview[0], global.bannerSize, $B2CE30, $C9DD6F, $C9DD6F, $B2CE30, false);
 
-padding=10;
-max_width=round(view_wview[0]*0.4);
-font=fnt_base;
-font_size = font_get_size(font)
+draw_set_font(fnt_base);
+draw_set_color($FFFFFF);
+
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");
 </string>
           </argument>
         </arguments>
