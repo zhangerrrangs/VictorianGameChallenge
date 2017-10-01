@@ -21,16 +21,16 @@ if(global.playerSpeaking)
     var objType = obj_messageOther;
 }
 
-var messageID = scr_drawBox(str, 0, global.yTextSpawn, objType);
+var messageID = scr_createBox(objType, global.yTextSpawn);
 messageID.convoID = id;
 
 with(obj_messageOther) {
-    y -= (scr_boxHeight(other.str) + (padding * 4));
+    y -= (scr_boxHeight(other.str) + (global.padding * 4));
     //show_debug_message(scr_boxHeight(other.str));
 }
 
 with(obj_messagePlayer) {
-    y -= (scr_boxHeight(other.str) + (padding * 4));
+    y -= (scr_boxHeight(other.str) + (global.padding * 4));
     //show_debug_message(scr_boxHeight(other.str));
 }
 
@@ -41,8 +41,8 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
     
     optionSizes[0] = 0;
     var listSize = ds_list_size(op0[on0,on1]);
-    var optionSpaceStart = round(view_hview[0] - optionBoxSize);
-    optionSpaceLeft = optionBoxSize;
+    var optionSpaceStart = round(view_hview[0] - global.optionBoxSize);
+    optionSpaceLeft = global.optionBoxSize;
     
     for(i=0;i<listSize;i++) {
         var txt = ds_list_find_value(op0[on0,on1],i);
@@ -60,9 +60,9 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
             yPosition += optionSizes[@ j];
         }
         
-        scr_drawBox(txt, view_wview[0]/2, yPosition, obj_option);
+        var optionID = scr_createBox(obj_option, yPosition);
         
-        with(obj_option) {
+        with(optionID) {
             self.convoID = other.id
             self.optionID = other.i;
         }

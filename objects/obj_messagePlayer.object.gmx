@@ -109,10 +109,10 @@ draw_set_valign(fa_top);
 draw_text_ext
 (
     x - global.padding,
-    y + glboal.padding,
+    y + global.padding,
     text,
     global.font_size+(global.font_size/2),
-    max_width
+    global.max_width
 );
 
 draw_set_alpha(1);

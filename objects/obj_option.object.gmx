@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise variables
+x = view_wview[0]/2;
+
 color = c_gray; 
 optionID = -1;
 draw_set_circle_precision(128);
@@ -98,17 +100,17 @@ draw_set_color(color);
 draw_roundrect_ext(x, y, x + box_width, y + box_height, 20, 25, false);
 
 draw_set_color(c_black);
-draw_set_font(font);
+draw_set_font(global.font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
 draw_text_ext
 (
-    x + padding,
-    y + padding,
+    x + global.padding,
+    y + global.padding,
     text,
-    font_size+(font_size/2),
-    max_width
+    global.font_size+(global.font_size/2),
+    global.max_width
 );
 </string>
           </argument>

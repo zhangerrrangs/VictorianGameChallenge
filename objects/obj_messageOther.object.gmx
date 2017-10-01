@@ -96,10 +96,10 @@ icon_y = y + (global.icon_size);
 draw_set_alpha(1);
 draw_set_color(icon_color);
 
-draw_circle(icon_x, icon_y, icon_size, false);
+draw_circle(icon_x, icon_y, global.icon_size, false);
 
 draw_set_color(c_white);
-draw_set_font(font);
+draw_set_font(global.font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
 draw_text(icon_x - (global.icon_size - global.padding), icon_y, "PN")
@@ -147,7 +147,7 @@ draw_text_ext
     y + global.padding,
     text,
     global.font_size+(global.font_size/2),
-    max_width
+    global.max_width
 );
 
 draw_set_alpha(1);

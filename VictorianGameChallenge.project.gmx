@@ -83,11 +83,11 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_createBox.gml</script>
     <script>scripts\scr_convoContinue.gml</script>
     <script>scripts\scr_boxWidth.gml</script>
     <script>scripts\scr_boxHeight.gml</script>
     <script>scripts\scr_playerSpeaking.gml</script>
-    <script>scripts\scr_drawBox.gml</script>
     <scripts name="Conversation">
       <script>scripts\load_npcChat.gml</script>
       <script>scripts\make_color_hex.gml</script>
