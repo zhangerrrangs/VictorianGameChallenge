@@ -24,6 +24,11 @@ if(global.playerSpeaking)
 global.newMessage = scr_createBox(str, global.yTextSpawn, objType);
 global.newMessage.convoID = id;
 
+if(global.firstMessage == -1) {
+    global.firstMessage = global.newMessage;
+    
+}
+
 with(obj_messageOther) {
     y -= (scr_boxHeight(other.str) + (global.padding * 4));
     //show_debug_message(scr_boxHeight(other.str));
@@ -41,7 +46,6 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
     
     optionSizes[0] = 0;
     var listSize = ds_list_size(op0[on0,on1]);
-    var optionSpaceStart = round(view_hview[0] - global.optionBoxSize);
     optionSpaceLeft = global.optionBoxSize;
     
     for(i=0;i<listSize;i++) {
@@ -54,7 +58,7 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
     
     for(i=0;i<listSize;i++) {
         var txt = ds_list_find_value(op0[on0,on1],i);
-        var yPosition = optionSpaceStart + (optionSpacing * (i + 1));
+        var yPosition = global.optionBoxStart + (optionSpacing * (i + 1));
         
         for(j=0;j<i;j++) {
             yPosition += optionSizes[@ j];

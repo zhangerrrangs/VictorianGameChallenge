@@ -105,6 +105,7 @@
       </scripts>
     </scripts>
     <script>scripts\scr_endCredit.gml</script>
+    <script>scripts\scr_changeMessageYPos.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_base</font>

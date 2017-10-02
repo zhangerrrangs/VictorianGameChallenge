@@ -32,6 +32,9 @@ frictionDrag = 5;
 grabbed = false;
 grabTime = 0;
 grabDecay = 20000
+
+maxSpeed = 100;
+minSpeed = 10;
 </string>
           </argument>
         </arguments>
@@ -54,7 +57,7 @@ grabDecay = 20000
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left)) {
+            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !global.newMessage.transition) {
     grabbed = true;
     lastMouse_y = mouse_y
     ydragStart = mouse_y;
@@ -81,11 +84,11 @@ if(grabbed &amp;&amp; mouse_check_button_released(mb_left)) {
     
     ySpeed = (mouse_y - ydragStart) * (1/grabTime);
     
-    if(abs(ySpeed) &gt; 100) {
-        ySpeed = sign(ySpeed) * 100;
+    if(abs(ySpeed) &gt; maxSpeed) {
+        ySpeed = sign(ySpeed) * maxSpeed;
     }
     
-    if(abs(ySpeed) &lt; 10) {
+    if(abs(ySpeed) &lt; minSpeed) {
         ySpeed = 0;
     }
 }
@@ -103,15 +106,41 @@ if(global.newMessage.y &gt; global.optionBoxSize) {
     }
     ySpeed = 0;
 }
+
+var optionPos = view_hview[0] - global.optionBoxSize
+if(y + other.ySpeed + box_height &gt; optionPos) {
+    other.ySpeed = y - optionPos;
+} 
 */
+
+if(global.firstMessage != -1) {
+    with(global.firstMessage) {
     
-with(obj_messagePlayer) {
-    y += other.ySpeed;
+        var yStop = global.bannerSize + global.padding;
+        //Make globals consistent:font
+        if(y + other.ySpeed &lt; yStop) {
+        distanceToBanner = (global.bannerSize + global.padding) - y;
+        scr_changeMessageYPos(distanceToBanner);
+        
+        other.ySpeed = 0;
+        }
+    }
+}
+if(global.newMessage != -1) {
+    with(global.newMessage) {
+        //var bottom_y = y + box_height;
+        var yStop = global.yTextSpawn - box_height - global.padding * 4;
+        //if(bottom_y + other.ySpeed &gt; global.optionBoxStart) {
+        if(y + other.ySpeed &gt; yStop) {
+            distanceToOption = yStop - y;
+            scr_changeMessageYPos(distanceToOption);
+            
+            other.ySpeed = 0;
+        }
+    }
 }
 
-with(obj_messageOther) {
-    y += other.ySpeed;
-}
+scr_changeMessageYPos(ySpeed);
 </string>
           </argument>
         </arguments>
