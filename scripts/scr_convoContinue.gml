@@ -21,8 +21,8 @@ if(global.playerSpeaking)
     var objType = obj_messageOther;
 }
 
-var messageID = scr_createBox(objType, global.yTextSpawn);
-messageID.convoID = id;
+global.newMessage = scr_createBox(objType, global.yTextSpawn);
+global.newMessage.convoID = id;
 
 with(obj_messageOther) {
     y -= (scr_boxHeight(other.str) + (global.padding * 4));
@@ -37,7 +37,7 @@ with(obj_messagePlayer) {
 instance_destroy(obj_option);
     
 if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
-    messageID.transition = false;
+    global.newMessage.transition = false;
     
     optionSizes[0] = 0;
     var listSize = ds_list_size(op0[on0,on1]);

@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>ySpeed = 0;
-frictionDrag = 0.5;
+frictionDrag = 5;
 grabbed = false;
+grabTime = 0;
 </string>
           </argument>
         </arguments>
@@ -50,16 +51,58 @@ grabbed = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, 
-global.bannerSize, view_wview[0], 
-global.optionBoxSize &amp;&amp; mouse_check_button_pressed(mb_left))) {
+            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left)) {
     grabbed = true;
     ydragStart = mouse_y;
+    show_debug_message("Registered");
 }
 
-if(grabbed &amp;&amp; !mouse_check_button(mb_left)) {
+if(grabbed &amp;&amp; mouse_check_button(mb_left)) {
+    grabTime += delta_time;
+}
+
+if(abs(ySpeed) &gt; abs(frictionDrag)) {
+    ySpeed -= frictionDrag * sign(ySpeed);
+} else {
+    ySpeed = 0;
+}
+
+if(grabbed &amp;&amp; mouse_check_button_released(mb_left)) {
     grabbed = false;
-    ySpeed = dragDistance = ydragStart - mouse_y;
+    
+    grabTime /= 20000;
+    
+    ySpeed = (mouse_y - ydragStart) * (1/grabTime);
+    
+    if(abs(ySpeed) &gt; 100) {
+        ySpeed = sign(ySpeed) * 100;
+    }
+    
+    if(abs(ySpeed) &lt; 10) {
+        ySpeed = 0;
+    }
+}
+/*
+if(global.newMessage.y &gt; global.optionBoxSize) {
+
+    var distanceToMove = global.newMessage.y - (view_hview[0] - global.optionBoxSize)
+
+    with(obj_messagePlayer) {
+        y += distanceToMove;
+    }
+    
+    with(obj_messageOther) {
+        y += distanceToMove;
+    }
+    ySpeed = 0;
+}
+*/
+with(obj_messagePlayer) {
+    y += other.ySpeed;
+}
+
+with(obj_messageOther) {
+    y += other.ySpeed;
 }
 </string>
           </argument>
