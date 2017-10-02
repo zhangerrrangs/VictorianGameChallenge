@@ -1,6 +1,8 @@
-var messageID = instance_create(0, argument1, argument0);
+//scr_createBox(String, ySpawn, objType)
+
+var messageID = instance_create(0, argument1, argument2);
 with(messageID) {
-    self.text = other.str;
+    self.text = argument0;
     self.box_width = scr_boxWidth(text);
     self.box_height = scr_boxHeight(text);
 

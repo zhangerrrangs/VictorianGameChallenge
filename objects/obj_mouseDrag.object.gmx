@@ -25,10 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ySpeed = 0;
+            <string>lastMouse_y = 0;
+ySpeed = 0;
 frictionDrag = 5;
+
 grabbed = false;
 grabTime = 0;
+grabDecay = 20000
 </string>
           </argument>
         </arguments>
@@ -53,12 +56,9 @@ grabTime = 0;
             <kind>1</kind>
             <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left)) {
     grabbed = true;
+    lastMouse_y = mouse_y
     ydragStart = mouse_y;
     show_debug_message("Registered");
-}
-
-if(grabbed &amp;&amp; mouse_check_button(mb_left)) {
-    grabTime += delta_time;
 }
 
 if(abs(ySpeed) &gt; abs(frictionDrag)) {
@@ -67,10 +67,17 @@ if(abs(ySpeed) &gt; abs(frictionDrag)) {
     ySpeed = 0;
 }
 
+if(grabbed &amp;&amp; mouse_check_button(mb_left)) {
+    grabTime += delta_time;
+    ySpeed = mouse_y - lastMouse_y;
+    
+    lastMouse_y = mouse_y;
+}
+
 if(grabbed &amp;&amp; mouse_check_button_released(mb_left)) {
     grabbed = false;
     
-    grabTime /= 20000;
+    grabTime /= grabDecay;
     
     ySpeed = (mouse_y - ydragStart) * (1/grabTime);
     
@@ -97,6 +104,7 @@ if(global.newMessage.y &gt; global.optionBoxSize) {
     ySpeed = 0;
 }
 */
+    
 with(obj_messagePlayer) {
     y += other.ySpeed;
 }
