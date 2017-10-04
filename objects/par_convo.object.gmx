@@ -173,14 +173,14 @@ load_npcChat(pid);
           <argument>
             <kind>1</kind>
             <string>///Draw banner
-draw_rectangle_color(0, 0, view_wview[0], global.bannerSize, $B2CE30, $C9DD6F, $C9DD6F, $B2CE30, false);
+/*draw_rectangle_color(0, 0, view_wview[0], global.bannerSize, $B2CE30, $C9DD6F, $C9DD6F, $B2CE30, false);
 
 draw_set_font(fnt_base);
 draw_set_color($FFFFFF);
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");
+draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");*/
 </string>
           </argument>
         </arguments>
