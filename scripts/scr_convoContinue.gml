@@ -9,7 +9,6 @@ if p=0 {
 } else {
     str=string_copy(line[on0,on1],1,p-1)
 }
-
 show_debug_message(str);
 //show_debug_message(string(on0) + " " + string(on1));
 //Move global if into just the variable
@@ -22,8 +21,9 @@ if(!global.playerSpeaking)
     var objType = obj_messageOther;
 }
 
-global.newMessage = scr_createBox(str, global.optionBoxBoundary + global.messageSpacing, objType);
-//global.newMessageSpawn = global.newMessage.y + global.messageSpacing;
+//global.newMessageSpawn = global.newMessage.y + scr_boxHeight(str) + (global.padding* 4)
+
+global.newMessage = scr_createBox(str, global.optionBoxStart, objType);
 global.newMessage.convoID = id;
 
 if(global.firstMessage == -1) {
@@ -58,9 +58,6 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
         }
         
         var optionID = scr_createBox(txt, yPosition, obj_option);
-        //yPosition = global.newMessageSpawn + global.messageSpacing;
-        
-        scr_moveMessage(txt);
         
         with(optionID) {
             self.convoID = other.id

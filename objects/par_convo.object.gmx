@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -63,14 +63,15 @@ global.icon_size = ((global.font_size/2) + (global.padding * 2));
 
 global.optionBoxSize = view_hview[0]*0.333;
 global.optionBoxStart = view_hview[0] - global.optionBoxSize;
-global.optionBoxBoundary = global.optionBoxStart - (global.padding * 4);
+//global.optionBoxBoundary = global.optionBoxStart - (global.padding * 4);
 global.bannerSize = view_hview[0] * 0.1;
+//global.bannerBoxBoundary = global.bannerSize + (global.padding * 2);
 
 global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
 global.messagePlayerAlign = view_wview[0] - global.padding;
 global.firstMessage = -1;
 global.newMessage = -1;
-global.newMessage.y = global.bannerSize + global.padding;
+//global.newMessage.y = global.bannerSize + global.padding;
 </string>
           </argument>
         </arguments>
@@ -171,14 +172,14 @@ load_npcChat(pid);
           <argument>
             <kind>1</kind>
             <string>///Draw banner
-/*draw_rectangle_color(0, 0, view_wview[0], global.bannerSize, $B2CE30, $C9DD6F, $C9DD6F, $B2CE30, false);
+draw_rectangle_color(0, 0, view_wview[0], global.bannerSize, $B2CE30, $C9DD6F, $C9DD6F, $B2CE30, false);
 
 draw_set_font(fnt_base);
 draw_set_color($FFFFFF);
 
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");*/
+draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");
 </string>
           </argument>
         </arguments>

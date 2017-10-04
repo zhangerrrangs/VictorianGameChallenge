@@ -35,7 +35,6 @@ transition = true;
 
 alarm[0] = global.delay;
 
-depth -= instance_number(self.object_index);
 draw_set_circle_precision(64);
 </string>
           </argument>

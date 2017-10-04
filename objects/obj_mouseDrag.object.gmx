@@ -130,7 +130,7 @@ if(global.firstMessage != -1) {
 if(global.newMessage != -1) {
     with(global.newMessage) {
         //var bottom_y = y + box_height;
-        var yStop = global.optionBoxBoundary - self.box_height;
+        var yStop = global.optionBoxStart - (global.padding * 4) - self.box_height;
         //if(bottom_y + other.ySpeed &gt; global.optionBoxStart) {
         if(y + other.ySpeed &lt; yStop) {
             distanceToOption = yStop - y;
