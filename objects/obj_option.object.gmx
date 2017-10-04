@@ -60,9 +60,14 @@ draw_set_circle_precision(64);
 if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left)) {
     global.optionSelected = optionID;
     
+<<<<<<< HEAD
     global.newMessage = scr_createBox(other.text, global.optionBoxBoundary, obj_messagePlayer);
     //global.newMessageSpawn = global.newMessage.y + global.messageSpacing;
+=======
+    global.newMessage = scr_createBox(other.text, global.newMessageSpawn, obj_messagePlayer);
+>>>>>>> parent of 2982f8f... Fix message spawning incorrectly
     global.newMessage.convoID = id;
+    //global.newMessage.transition = true;
     
     scr_moveMessage(text);
     
