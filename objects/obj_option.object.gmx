@@ -61,8 +61,8 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
     global.optionSelected = optionID;
     
     global.newMessage = scr_createBox(other.text, global.newMessageSpawn, obj_messagePlayer);
+    //global.newMessageSpawn = global.newMessage.y + global.messageSpacing;
     global.newMessage.convoID = id;
-    //global.newMessage.transition = true;
     
     scr_moveMessage(text);
     

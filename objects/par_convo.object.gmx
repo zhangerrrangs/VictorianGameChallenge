@@ -65,12 +65,14 @@ global.optionBoxSize = view_hview[0]*0.333;
 global.optionBoxStart = view_hview[0] - global.optionBoxSize;
 global.optionBoxBoundary = global.optionBoxStart - (global.padding * 4);
 global.bannerSize = view_hview[0] * 0.1;
+global.bannerSizeBoundary = global.bannerSize + global.padding;
 
 global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
 global.messagePlayerAlign = view_wview[0] - global.padding;
+global.messageSpacing = global.padding * 2;
 global.firstMessage = -1;
 global.newMessage = -1;
-global.newMessage.y = global.bannerSize + global.padding;
+global.newMessageSpawn = global.optionBoxBoundary;
 </string>
           </argument>
         </arguments>
