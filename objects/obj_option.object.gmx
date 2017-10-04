@@ -26,11 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise variables
-x = view_wview[0]/2;
+x = global.padding * 4;
 
-color = c_gray; 
+color = $EAEAEA; 
+colorSelected = $D5E233;
 optionID = -1;
-draw_set_circle_precision(128);
+
+draw_set_circle_precision(64);
 </string>
           </argument>
         </arguments>
@@ -56,13 +58,20 @@ draw_set_circle_precision(128);
             <string>///Option control
 
 if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left)) {
-    if(optionID != -1) {
-        with(convoID) {
-            scrNPCDialogOption(other.optionID);
-            scr_convoContinue();
-        }
-    } else {
-        show_debug_message("IT FUCKED UP");
+    global.optionSelected = optionID;
+    
+    global.newMessage = scr_createBox(other.text, global.newMessageSpawn, obj_messagePlayer);
+    global.newMessage.convoID = id;
+    //global.newMessage.transition = true;
+    
+    scr_moveMessage(text);
+    
+    with(convoID) {
+        //show_debug_message("Redo");
+        //scr_addMessage(other.text, obj_messagePlayer);
+        scrNPCDialogOption(other.optionID);
+        scr_convoContinue();
+        //game_save("Save.dat");
     }
 }
 </string>
@@ -92,11 +101,16 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
 draw_set_alpha(1);
 //if (alpha &lt; 1) alpha += 0.05; //else alpha = 1;
 
-draw_set_color(color);
 //draw_rectangle(x, y, x + box_width, y + box_height, false);
 
 //Other options
 //draw_sprite_stretched(sprite, subimg, x, y, w, h);
+if(global.optionSelected == optionID) {
+    draw_set_color(colorSelected);
+    draw_roundrect_ext(x - global.padding/2, y - global.padding/2, x + box_width + global.padding/2, y + box_height + global.padding/2, 20, 25, false);
+}
+
+draw_set_color(color);
 draw_roundrect_ext(x, y, x + box_width, y + box_height, 20, 25, false);
 
 draw_set_color(c_black);

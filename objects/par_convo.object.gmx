@@ -25,6 +25,96 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Create obj_mouseDrag
+instance_create(0, 0, obj_mouseDrag);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Conversation variables
+global.newMessage = -1;
+global.optionSelected = -1;
+
+global.delay = room_speed * 0.5;
+
+global.padding = 10;
+global.max_width = view_wview[0]*0.4;
+global.font = fnt_base;
+global.font_size = font_get_size(global.font);
+global.icon_size = ((global.font_size/2) + (global.padding * 2));
+
+global.optionBoxSize = view_hview[0]*0.333;
+global.optionBoxStart = view_hview[0] - global.optionBoxSize;
+global.optionBoxBoundary = global.optionBoxStart - (global.padding * 4);
+global.bannerSize = view_hview[0] * 0.1;
+
+global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
+global.messagePlayerAlign = view_wview[0] - global.padding;
+global.firstMessage = -1;
+global.newMessage = -1;
+global.newMessage.y = global.bannerSize + global.padding;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Load game save
+if(file_exists("Save.dat")) {
+    game_load("Save.dat");
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Load conversation from file
 global.NPCdirectory="Dialog/";
 global.playerSpeaking = true;
@@ -58,70 +148,6 @@ for(i=0;i&lt;100;i++){
 chatMap=ds_map_create() //Map used for [var=xxx] tag!
 
 load_npcChat(pid);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Create obj_mouseDrag
-instance_create(0, 0, obj_mouseDrag);
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Conversation variables
-global.newMessage = -1;
-
-global.delay = room_speed * 0.5;
-
-global.optionBoxSize = view_hview[0]*0.333;
-global.optionBoxStart = round(view_hview[0] - global.optionBoxSize);
-global.yTextSpawn = view_hview[0] - global.optionBoxSize;
-global.bannerSize = view_hview[0] * 0.1;
-
-global.padding = 10;
-global.max_width = view_wview[0]*0.4;
-global.font = fnt_base;
-global.font_size = font_get_size(global.font);
-global.icon_size = ((global.font_size/2) + (global.padding * 2));
-
-global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
-global.messagePlayerAlign = view_wview[0] - global.padding;
-global.firstMessage = -1;
-global.newMessage = -1;
 </string>
           </argument>
         </arguments>

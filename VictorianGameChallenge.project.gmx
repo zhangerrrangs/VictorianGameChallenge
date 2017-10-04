@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="4" name="datafiles">
-    <datafiles number="4" name="Dialog">
+  <datafiles number="5" name="datafiles">
+    <datafiles number="5" name="Dialog">
       <datafile>
         <name>0.txt</name>
         <exists>-1</exists>
@@ -73,6 +73,23 @@
         </ConfigOptions>
         <filename>4.txt</filename>
       </datafile>
+      <datafile>
+        <name>5.txt</name>
+        <exists>-1</exists>
+        <size>6803</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>5.txt</filename>
+      </datafile>
     </datafiles>
   </datafiles>
   <NewExtensions/>
@@ -83,6 +100,8 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_ending.gml</script>
+    <script>scripts\scr_changeMessageYPos.gml</script>
     <script>scripts\scr_createBox.gml</script>
     <script>scripts\scr_convoContinue.gml</script>
     <script>scripts\scr_boxWidth.gml</script>
@@ -104,8 +123,7 @@
         <script>scripts\draw_text_shadow_color_ext.gml</script>
       </scripts>
     </scripts>
-    <script>scripts\scr_endCredit.gml</script>
-    <script>scripts\scr_changeMessageYPos.gml</script>
+    <script>scripts\scr_moveMessage.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_base</font>
@@ -124,11 +142,19 @@
         <object>objects\par_convo</object>
         <object>objects\obj_mouseDrag</object>
       </objects>
+      <object>objects\obj_ending</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rom_message</room>
-    <room>rooms\rom_menu</room>
+    <room>rooms\rom_racismChat</room>
+    <room>rooms\rom_parent</room>
+    <room>rooms\rom_base</room>
+    <rooms name="Chat">
+      <rooms name="Privacy">
+        <room>rooms\room5</room>
+        <room>rooms\rom_privacyMessage</room>
+      </rooms>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

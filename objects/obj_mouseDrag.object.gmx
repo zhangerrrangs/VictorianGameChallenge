@@ -118,20 +118,21 @@ if(global.firstMessage != -1) {
     
         var yStop = global.bannerSize + global.padding;
         //Make globals consistent:font
-        if(y + other.ySpeed &lt; yStop) {
-        distanceToBanner = (global.bannerSize + global.padding) - y;
-        scr_changeMessageYPos(distanceToBanner);
+        if(y + other.ySpeed &gt; yStop) {
+            distanceToBanner = (global.bannerSize + global.padding) - y;
+            scr_changeMessageYPos(distanceToBanner);
         
-        other.ySpeed = 0;
+            other.ySpeed = 0;
         }
     }
 }
+
 if(global.newMessage != -1) {
     with(global.newMessage) {
         //var bottom_y = y + box_height;
-        var yStop = global.yTextSpawn - box_height - global.padding * 4;
+        var yStop = global.optionBoxBoundary - self.box_height;
         //if(bottom_y + other.ySpeed &gt; global.optionBoxStart) {
-        if(y + other.ySpeed &gt; yStop) {
+        if(y + other.ySpeed &lt; yStop) {
             distanceToOption = yStop - y;
             scr_changeMessageYPos(distanceToOption);
             

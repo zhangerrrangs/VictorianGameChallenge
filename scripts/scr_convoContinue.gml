@@ -12,7 +12,7 @@ if p=0 {
 show_debug_message(str);
 //show_debug_message(string(on0) + " " + string(on1));
 //Move global if into just the variable
-if(global.playerSpeaking)
+if(!global.playerSpeaking)
 {
     //var xTextSpawn = view_wview[0];
     var objType = obj_messagePlayer;
@@ -21,26 +21,18 @@ if(global.playerSpeaking)
     var objType = obj_messageOther;
 }
 
-global.newMessage = scr_createBox(str, global.yTextSpawn, objType);
+global.newMessageSpawn = global.newMessage.y + scr_boxHeight(str) + (global.padding* 4)
+global.newMessage = scr_createBox(str, global.newMessageSpawn, objType);
 global.newMessage.convoID = id;
 
 if(global.firstMessage == -1) {
     global.firstMessage = global.newMessage;
-    
 }
 
-with(obj_messageOther) {
-    y -= (scr_boxHeight(other.str) + (global.padding * 4));
-    //show_debug_message(scr_boxHeight(other.str));
-}
-
-with(obj_messagePlayer) {
-    y -= (scr_boxHeight(other.str) + (global.padding * 4));
-    //show_debug_message(scr_boxHeight(other.str));
-}
+scr_moveMessage(str);
 
 instance_destroy(obj_option);
-    
+
 if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
     global.newMessage.transition = false;
     
