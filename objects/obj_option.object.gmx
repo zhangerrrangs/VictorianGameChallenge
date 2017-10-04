@@ -61,8 +61,12 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
     global.optionSelected = optionID;
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     global.newMessage = scr_createBox(other.text, global.optionBoxBoundary, obj_messagePlayer);
     //global.newMessageSpawn = global.newMessage.y + global.messageSpacing;
+=======
+    global.newMessage = scr_createBox(other.text, global.newMessageSpawn, obj_messagePlayer);
+>>>>>>> parent of 2982f8f... Fix message spawning incorrectly
 =======
     global.newMessage = scr_createBox(other.text, global.newMessageSpawn, obj_messagePlayer);
 >>>>>>> parent of 2982f8f... Fix message spawning incorrectly
