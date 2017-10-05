@@ -153,6 +153,7 @@
     <font>fonts\fnt_title</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_menu</object>
     <objects name="End">
       <object>objects\draw_ending</object>
       <object>objects\obj_continue</object>
@@ -160,11 +161,10 @@
     <object>objects\obj_start</object>
     <objects name="Conversation">
       <objects name="Message">
-        <object>objects\obj_messageOther</object>
         <object>objects\obj_messagePlayer</object>
         <object>objects\obj_option</object>
         <object>objects\draw_border</object>
-        <object>objects\obj_menu</object>
+        <object>objects\obj_messageOther</object>
       </objects>
       <objects name="Controllers">
         <object>objects\objControl</object>

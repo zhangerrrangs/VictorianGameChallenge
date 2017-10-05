@@ -2,10 +2,10 @@
 
 
 //Checks to see if the file exists
-if !file_exists(global.NPCdirectory+"\"+string(argument[0])+".txt"){return 0}
+if !file_exists(global.NPCdirectory+"\"+argument[0]+".txt"){return 0}
 
 //Opens the file and checks to see if it starts with "[text]"
-file=file_text_open_read(global.NPCdirectory+"\"+string(argument[0])+".txt")
+file=file_text_open_read(global.NPCdirectory+"\"+argument[0]+".txt")
 if file_text_read_string(file)!="[text]"{return 0}
 file_text_readln(file)
 

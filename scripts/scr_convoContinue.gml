@@ -9,10 +9,11 @@ if p=0 {
 } else {
     str=string_copy(line[on0,on1],1,p-1)
 }
+
 show_debug_message(str);
 //show_debug_message(string(on0) + " " + string(on1));
 //Move global if into just the variable
-if(!global.playerSpeaking)
+if(global.playerSpeaking)
 {
     //var xTextSpawn = view_wview[0];
     var objType = obj_messagePlayer;
@@ -23,7 +24,7 @@ if(!global.playerSpeaking)
 
 //global.newMessageSpawn = global.newMessage.y + scr_boxHeight(str) + (global.padding* 4)
 
-global.newMessage = scr_createBox(str, global.optionBoxStart, objType);
+global.newMessage = scr_createBox(str, global.optionBoxStart, objType, global.max_width);
 global.newMessage.convoID = id;
 
 if(global.firstMessage == -1) {
@@ -43,8 +44,8 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
     
     for(i=0;i<listSize;i++) {
         var txt = ds_list_find_value(op0[on0,on1],i);
-        optionSpaceLeft -= scr_boxHeight(txt, view_wview[0] - (global.padding * 2));
-        optionSizes[i] = scr_boxHeight(txt, view_wview[0] - (global.padding * 2));
+        optionSpaceLeft -= scr_boxHeight(txt, global.optionMaxWidth);
+        optionSizes[i] = scr_boxHeight(txt, global.optionMaxWidth);
     }
     
     var optionSpacing = optionSpaceLeft/(listSize + 1);
@@ -57,7 +58,7 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
             yPosition += optionSizes[@ j];
         }
         
-        var optionID = scr_createBox(txt, yPosition, obj_option);
+        var optionID = scr_createBox(txt, yPosition, obj_option, global.optionMaxWidth);
         
         with(optionID) {
             self.convoID = other.id

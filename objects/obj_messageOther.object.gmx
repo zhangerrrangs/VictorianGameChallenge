@@ -50,7 +50,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise variables
-x = 0;
+x = (global.font_size * 2) + (global.padding * 2) - 20;
 xAlignment = global.messageOtherAlign;
 
 alpha = 0;
