@@ -93,7 +93,10 @@
     </datafiles>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\son_messageReceive</sound>
+    <sound>sound\son_messageSend</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
   </sprites>
@@ -135,6 +138,7 @@
         <object>objects\obj_messageOther</object>
         <object>objects\obj_messagePlayer</object>
         <object>objects\obj_option</object>
+        <object>objects\draw_border</object>
       </objects>
       <objects name="Controllers">
         <object>objects\objControl</object>

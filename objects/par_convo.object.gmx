@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -69,6 +69,7 @@ global.bannerSize = view_hview[0] * 0.1;
 
 global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
 global.messagePlayerAlign = view_wview[0] - global.padding;
+global.receiving = true;
 global.firstMessage = -1;
 global.newMessage = -1;
 //global.newMessage.y = global.bannerSize + global.padding;
@@ -180,30 +181,6 @@ draw_set_color($FFFFFF);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="72">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw option box
-draw_rectangle(0, view_hview[0] - global.optionBoxSize, view_wview[0], view_hview[0], false);
 </string>
           </argument>
         </arguments>

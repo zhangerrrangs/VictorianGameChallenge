@@ -32,10 +32,10 @@ if(global.firstMessage == -1) {
 
 scr_moveMessage(str);
 
-instance_destroy(obj_option);
-
 if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
+    instance_destroy(obj_option);
     global.newMessage.transition = false;
+    global.receiving = false;
     
     optionSizes[0] = 0;
     var listSize = ds_list_size(op0[on0,on1]);

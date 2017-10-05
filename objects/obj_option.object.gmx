@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -59,6 +59,8 @@ draw_set_circle_precision(64);
 
 if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left)) {
     //global.optionSelected = optionID;
+    global.receiving = true;
+    
     distanceToStart = (global.optionBoxStart) - global.newMessage.y -  global.newMessage.box_height - (global.padding * 4);
     with(obj_messagePlayer) {
         y += other.distanceToStart
@@ -105,8 +107,11 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
           <argument>
             <kind>1</kind>
             <string>///Draw box
-
-draw_set_alpha(1);
+if(global.receiving) {
+    draw_set_alpha(0.50);
+} else {
+    draw_set_alpha(1)
+}
 //if (alpha &lt; 1) alpha += 0.05; //else alpha = 1;
 
 //draw_rectangle(x, y, x + box_width, y + box_height, false);
