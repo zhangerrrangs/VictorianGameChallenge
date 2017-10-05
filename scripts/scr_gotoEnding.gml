@@ -1,5 +1,5 @@
 //Not needed
-global.newMessage.transition = false;
+//global.newMessage.transition = false;
 var newRoom = room_duplicate(rom_base);
 room_goto(newRoom);
 

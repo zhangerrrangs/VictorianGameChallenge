@@ -103,7 +103,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_ending.gml</script>
+    <script>scripts\scr_gotoEnding.gml</script>
     <script>scripts\scr_changeMessageYPos.gml</script>
     <script>scripts\scr_createBox.gml</script>
     <script>scripts\scr_convoContinue.gml</script>

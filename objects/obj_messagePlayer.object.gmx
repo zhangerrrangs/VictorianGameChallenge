@@ -55,7 +55,7 @@ xAlignment = global.messagePlayerAlign;
 
 alpha = 0;
 color = $D5E233;
-transition = true;
+receiving = true;
 
 alarm[0] = global.delay;
 
@@ -83,7 +83,7 @@ draw_set_circle_precision(64);
           <argument>
             <kind>1</kind>
             <string>///Move on
-if(transition) {
+if(receiving) {
     with(convoID) {
         scrNPCDialogContinue();
         scr_convoContinue();
