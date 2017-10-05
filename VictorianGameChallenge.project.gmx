@@ -150,8 +150,13 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_base</font>
+    <font>fonts\fnt_title</font>
   </fonts>
   <objects name="objects">
+    <objects name="End">
+      <object>objects\draw_ending</object>
+      <object>objects\obj_continue</object>
+    </objects>
     <object>objects\obj_start</object>
     <objects name="Conversation">
       <objects name="Message">
@@ -159,27 +164,22 @@
         <object>objects\obj_messagePlayer</object>
         <object>objects\obj_option</object>
         <object>objects\draw_border</object>
+        <object>objects\obj_menu</object>
       </objects>
       <objects name="Controllers">
         <object>objects\objControl</object>
         <object>objects\obj_convo</object>
-        <object>objects\par_convo</object>
         <object>objects\obj_mouseDrag</object>
+        <object>objects\par_convo</object>
       </objects>
-      <object>objects\obj_ending</object>
-      <object>objects\obj_menu</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rom_racismChat</room>
-    <room>rooms\rom_parent</room>
+    <room>rooms\rom_test</room>
     <room>rooms\rom_base</room>
-    <rooms name="Chat">
-      <rooms name="Privacy">
-        <room>rooms\room5</room>
-        <room>rooms\rom_privacyMessage</room>
-      </rooms>
-    </rooms>
+    <room>rooms\rom_ending</room>
+    <room>rooms\rom_menu</room>
+    <room>rooms\rom_message</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

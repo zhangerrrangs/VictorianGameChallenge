@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialise variables
-x = global.padding * 4;
+x = global.optionAlign;
 
 color = $EAEAEA; 
 colorSelected = $D5E233;
@@ -138,7 +138,7 @@ draw_text_ext
     y + global.padding,
     text,
     global.font_size+(global.font_size/2),
-    view_wview[0] - (padding * 2)
+    view_wview[0] - (global.padding * 2)
 );
 
 draw_set_alpha(1)

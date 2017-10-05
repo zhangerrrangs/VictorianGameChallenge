@@ -8,92 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>6</kind>
-            <sound>son_messageReceive</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Initialise variables
-x = view_wview[0];
-xAlignment = global.messagePlayerAlign;
-
-alpha = 0;
-color = $D5E233;
-receiving = true;
-
-alarm[0] = global.delay;
-
-draw_set_circle_precision(64);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Move on
-if(receiving) {
-    with(convoID) {
-        scrNPCDialogContinue();
-        scr_convoContinue();
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -111,34 +25,95 @@ if(receiving) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw box
-
-draw_set_alpha(alpha);
-if (alpha &lt; 1) alpha += (0.000005 * delta_time); else alpha = 1;
-if (x &gt; xAlignment) x -= (0.0002 * delta_time) else x = xAlignment;
-
-draw_set_color(color);
-//draw_rectangle(x, y, x + box_width, y + box_height, false);
-
-//Other options
-//draw_sprite_stretched(sprite, subimg, x, y, w, h);
-draw_roundrect_ext(x, y, x - box_width, y + box_height, 25, 25, false);
-
+            <string>///Draw title
 draw_set_color(c_black);
-draw_set_font(global.font);
-draw_set_halign(fa_right);
+draw_set_font(global.fontTitle);
+draw_set_halign(fa_middle);
 draw_set_valign(fa_top);
 
-draw_text_ext
-(
-    x - global.padding,
-    y + global.padding,
-    text,
-    global.newLineSpacing,
-    global.max_width
+var titleHeight = string_height_ext(
+    "Penitnies", 
+    global.newLineSpacing, 
+    view_wview[0] - global.padding * 2
 );
 
-draw_set_alpha(1);
+draw_text_ext(
+    view_wview[0]/2, 
+    global.padding, 
+    "Penitnies", 
+    global.newLineSpacing,
+    view_wview[0] - global.padding * 2
+);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw image
+draw_sprite(global.ending, -1, view_wview[0]/2, global.padding * 4 + titleHeight)
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw text
+var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque efficitur pulvinar arcu non pulvinar. Etiam sit amet convallis velit, nec eleifend elit.  mattis nulla sit amet suscipit sodales.";
+
+draw_set_font(global.font);
+draw_set_halign(fa_middle);
+draw_set_valign(fa_top);
+draw_set_color(c_blue);
+/*
+//draw_roundrect(x, titleHeight + sprite_get_height(global.ending), view_wview[0], scr_boxHeight("text", view_wview[0] - global.padding * 2) + titleHeight + sprite_get_height(global.ending), false);
+draw_roundrect(
+    0, 
+    sprite_get_height(global.ending) + global.padding * 5 + titleHeight, 
+    view_wview[0], 
+    sprite_get_height(global.ending) + global.padding * 5 + titleHeight + scr_boxHeight(text, view_wview[0] - global.padding * 4),
+    false
+);*/
+
+draw_set_color($666666);
+
+draw_text_ext(
+    view_wview[0]/2, 
+    sprite_get_height(global.ending) + global.padding * 6 + titleHeight, 
+    text,
+    global.newLineSpacing,
+    view_wview[0] - global.padding * 4
+);
 </string>
           </argument>
         </arguments>

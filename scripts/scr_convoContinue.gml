@@ -43,8 +43,8 @@ if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
     
     for(i=0;i<listSize;i++) {
         var txt = ds_list_find_value(op0[on0,on1],i);
-        optionSpaceLeft -= scr_boxHeight(txt);
-        optionSizes[i] = scr_boxHeight(txt);
+        optionSpaceLeft -= scr_boxHeight(txt, view_wview[0] - (global.padding * 2));
+        optionSizes[i] = scr_boxHeight(txt, view_wview[0] - (global.padding * 2));
     }
     
     var optionSpacing = optionSpaceLeft/(listSize + 1);

@@ -3,12 +3,12 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="73">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,15 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw banner
-draw_rectangle_color(0, 0, view_wview[0], global.bannerSize, $B2CE30, $C9DD6F, $C9DD6F, $B2CE30, false);
+            <string>///Move to location
+x = view_wview[0]/2;
+y = view_hview[0] * 0.9
 
-draw_set_font(global.fontTitle);
-draw_set_color($FFFFFF);
+color = $D5E233;
 
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");
+//box_width = (view_wview[0] * 0.5)/2;
+//box_height = view_hview[0] * 0.06;
 </string>
           </argument>
         </arguments>
@@ -56,10 +55,8 @@ draw_text(view_wview[0]/2, round(view_hview[0] * 0.1)/2, "COol bruh");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw option box
-draw_set_alpha(1);
-draw_set_color($FFFFFF);
-draw_rectangle(0, view_hview[0] - global.optionBoxSize, view_wview[0], view_hview[0], false);
+            <string>draw_set_color(color);
+draw_roundrect_ext(x - box_width, y, x + box_width, y + box_height, 25, 25, false);
 </string>
           </argument>
         </arguments>
