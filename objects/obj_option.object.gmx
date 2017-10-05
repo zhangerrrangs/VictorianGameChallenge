@@ -138,7 +138,7 @@ draw_text_ext
     y + global.padding,
     text,
     global.font_size+(global.font_size/2),
-    global.max_width
+    view_wview[0] - (padding * 2)
 );
 
 draw_set_alpha(1)

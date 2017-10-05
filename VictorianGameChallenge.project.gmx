@@ -99,6 +99,26 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
+    <sprites name="Body Image">
+      <sprite>sprites\spr_bodyImageNegative</sprite>
+      <sprite>sprites\spr_bodyImagePositive</sprite>
+    </sprites>
+    <sprites name="BlackMail">
+      <sprite>sprites\spr_blackMailPositive</sprite>
+      <sprite>sprites\spr_blackMailNegative</sprite>
+    </sprites>
+    <sprites name="Privacy">
+      <sprite>sprites\spr_privacyPositive</sprite>
+      <sprite>sprites\spr_privacyNegative</sprite>
+    </sprites>
+    <sprites name="Racism">
+      <sprite>sprites\spr_racismPositive</sprite>
+      <sprite>sprites\spr_racismNegative</sprite>
+    </sprites>
+    <sprites name="Stranger Danger">
+      <sprite>sprites\spr_strangerDangerNegative</sprite>
+      <sprite>sprites\spr_strangerDangerPositive</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -147,6 +167,7 @@
         <object>objects\obj_mouseDrag</object>
       </objects>
       <object>objects\obj_ending</object>
+      <object>objects\obj_menu</object>
     </objects>
   </objects>
   <rooms name="rooms">
