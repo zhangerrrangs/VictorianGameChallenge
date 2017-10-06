@@ -55,7 +55,8 @@ color = $D5E233;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(color);
+            <string>draw_set_alpha(1);
+draw_set_color(color);
 draw_roundrect_ext(x - box_width, y, x + box_width, y + box_height, 25, 25, false);
 </string>
           </argument>

@@ -71,17 +71,17 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
         y += other.distanceToStart
     }
     
-    global.newMessage = scr_createBox(text, global.optionBoxStart, obj_messagePlayer, global.max_width);
-    global.newMessage.convoID = convoID;
-    global.newMessage.transition = true;
+    //global.newMessage = scr_createBox(text, global.optionBoxStart, obj_messagePlayer, global.max_width);
+    //global.newMessage.convoID = convoID;
+    //global.newMessage.transition = true;
     
-    scr_moveMessage(text);
+    //scr_moveMessage(text);
     
     with(convoID) {
         //show_debug_message("Redo");
         //scr_addMessage(other.text, obj_messagePlayer);
         scrNPCDialogOption(other.optionID);
-        //scr_convoContinue();
+        scr_convoContinue();
         //game_save("Save.dat");
     }
 }
