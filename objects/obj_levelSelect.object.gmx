@@ -8,6 +8,58 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>icon_y = global.padding + global.icon_size;
+icon_x = global.padding + global.icon_size;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(point_in_rectangle(mouse_x, mouse_y, x, y, view_wview[0], y + global.levelSelectHeight) &amp;&amp; mouse_check_button_pressed(mb_left)) {
+    global.storySelected = story;
+    global.bannerName = story[? "name"];
+    var newRoom = room_duplicate(rom_message);
+    room_goto(newRoom);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,95 +77,47 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw title
-draw_set_color(c_black);
-draw_set_font(global.fontTitle);
-draw_set_halign(fa_middle);
-draw_set_valign(fa_top);
+            <string>///Draw icon
+draw_set_alpha(1);
+draw_set_color($D5E233);
+draw_circle(x + global.padding + global.icon_size, y + global.padding + global.icon_size, global.icon_size, false);
 
-var titleHeight = string_height_ext(
-    "Penitnies", 
-    global.newLineSpacing, 
-    view_wview[0] - global.padding * 2
-);
-
-draw_text_ext(
-    view_wview[0]/2, 
-    global.padding, 
-    "Penitnies", 
-    global.newLineSpacing,
-    view_wview[0] - global.padding * 2
-);
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw image
-draw_sprite(global.ending, -1, view_wview[0]/2, global.padding * 4 + titleHeight)
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw text
-var text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque efficitur pulvinar arcu non pulvinar. Etiam sit amet convallis velit, nec eleifend elit.  mattis nulla sit amet suscipit sodales.";
-
+draw_set_color(c_white);
 draw_set_font(global.font);
-draw_set_halign(fa_middle);
-draw_set_valign(fa_top);
-draw_set_color(c_blue);
-/*
-//draw_roundrect(x, titleHeight + sprite_get_height(global.ending), view_wview[0], scr_boxHeight("text", view_wview[0] - global.padding * 2) + titleHeight + sprite_get_height(global.ending), false);
-draw_roundrect(
-    0, 
-    sprite_get_height(global.ending) + global.padding * 5 + titleHeight, 
-    view_wview[0], 
-    sprite_get_height(global.ending) + global.padding * 5 + titleHeight + scr_boxHeight(text, view_wview[0] - global.padding * 4),
-    false
-);*/
-
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text(x + global.padding + global.icon_size, y + global.padding + global.icon_size, story[? "initials"]);
+//draw_rectangle(x, y, viezzxw_wport[0], global.levelSelectHeight);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw name
 draw_set_color($666666);
+draw_set_font(global.font);
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
 
-draw_text_ext(
-    view_wview[0]/2, 
-    sprite_get_height(global.ending) + global.padding * 6 + titleHeight, 
-    text,
-    global.newLineSpacing,
-    view_wview[0] - global.padding * 4
-);
+draw_text(x + (global.padding * 2) + (global.icon_size * 2), y + global.padding + global.icon_size, story[? "name"]);
+
+draw_line_width_color(x, y + global.levelSelectHeight, view_wview[0], y + global.levelSelectHeight, global.padding/4, $D5E233, $EAEAEA);
+
 </string>
           </argument>
         </arguments>

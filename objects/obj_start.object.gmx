@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>with(obj_convo) {
-    //scr_gotoEnding(spr_strangerDangerPositive);
+    //scr_gotoEnding("Positive");
     scr_convoContinue();
+    //room_goto(rom_test);
 }
 instance_destroy(self);
 </string>

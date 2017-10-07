@@ -3,12 +3,12 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="5" name="datafiles">
-    <datafiles number="5" name="Dialog">
+  <datafiles number="34" name="datafiles">
+    <datafiles number="34" name="Dialog">
       <datafile>
-        <name>0.txt</name>
+        <name>Blackmail-Dialog.txt</name>
         <exists>-1</exists>
-        <size>2889</size>
+        <size>8100</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -20,12 +20,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>0.txt</filename>
+        <filename>Blackmail-Dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>1.txt</name>
+        <name>Privacy-Dialog.txt</name>
         <exists>-1</exists>
-        <size>225</size>
+        <size>3766</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -37,12 +37,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>1.txt</filename>
+        <filename>Privacy-Dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>3.txt</name>
+        <name>Racism-DIalog.txt</name>
         <exists>-1</exists>
-        <size>185</size>
+        <size>4231</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -54,12 +54,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>3.txt</filename>
+        <filename>Racism-DIalog.txt</filename>
       </datafile>
       <datafile>
-        <name>4.txt</name>
+        <name>StrangerDanger-Dialog.txt</name>
         <exists>-1</exists>
-        <size>133</size>
+        <size>4194</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -71,12 +71,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>4.txt</filename>
+        <filename>StrangerDanger-Dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>5.txt</name>
+        <name>BodyImage-Dialog.txt</name>
         <exists>-1</exists>
-        <size>6803</size>
+        <size>3850</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -88,7 +88,247 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>5.txt</filename>
+        <filename>BodyImage-Dialog.txt</filename>
+      </datafile>
+    </datafiles>
+    <datafiles number="34" name="Ending">
+      <datafile>
+        <name>StrangerDanger_Positive-outcome.txt</name>
+        <exists>-1</exists>
+        <size>565</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>StrangerDanger_Positive-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>StrangerDanger_Dead-outcome.txt</name>
+        <exists>-1</exists>
+        <size>604</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>StrangerDanger_Dead-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Blackmail_Dead-outcome.txt</name>
+        <exists>-1</exists>
+        <size>428</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Blackmail_Dead-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Blackmail_Murdered-outcome.txt</name>
+        <exists>-1</exists>
+        <size>406</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Blackmail_Murdered-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Blackmail_Positive-outcome.txt</name>
+        <exists>-1</exists>
+        <size>371</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Blackmail_Positive-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>BodyImage_Abstain-outcome.txt</name>
+        <exists>-1</exists>
+        <size>325</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>BodyImage_Abstain-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Bodyimage_Block-outcome.txt</name>
+        <exists>-1</exists>
+        <size>376</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Bodyimage_Block-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>BodyImage_Positve-outcome.txt</name>
+        <exists>-1</exists>
+        <size>376</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>BodyImage_Positve-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Privacy_Broke-outcome.txt</name>
+        <exists>-1</exists>
+        <size>0</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Privacy_Broke-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Privacy_Negative-outcome.txt</name>
+        <exists>-1</exists>
+        <size>702</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Privacy_Negative-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Privacy_Positive-outcome.txt</name>
+        <exists>-1</exists>
+        <size>305</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Privacy_Positive-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Racism_Negative-outcome.txt</name>
+        <exists>-1</exists>
+        <size>441</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Racism_Negative-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Racism_Positive-outcome.txt</name>
+        <exists>-1</exists>
+        <size>368</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Racism_Positive-outcome.txt</filename>
+      </datafile>
+      <datafile>
+        <name>StrangerDanger_Block-outcome.txt</name>
+        <exists>-1</exists>
+        <size>604</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>StrangerDanger_Block-outcome.txt</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -98,27 +338,28 @@
     <sound>sound\son_messageSend</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
     <sprites name="Body Image">
-      <sprite>sprites\spr_bodyImageNegative</sprite>
+      <sprite>sprites\spr_bodyImageAbstain</sprite>
       <sprite>sprites\spr_bodyImagePositive</sprite>
     </sprites>
     <sprites name="BlackMail">
-      <sprite>sprites\spr_blackMailPositive</sprite>
-      <sprite>sprites\spr_blackMailNegative</sprite>
+      <sprite>sprites\spr_blackmailPositive</sprite>
+      <sprite>sprites\spr_blackmailMurdered</sprite>
     </sprites>
     <sprites name="Privacy">
       <sprite>sprites\spr_privacyPositive</sprite>
-      <sprite>sprites\spr_privacyNegative</sprite>
+      <sprite>sprites\spr_privacyBroke</sprite>
     </sprites>
     <sprites name="Racism">
       <sprite>sprites\spr_racismPositive</sprite>
       <sprite>sprites\spr_racismNegative</sprite>
     </sprites>
     <sprites name="Stranger Danger">
-      <sprite>sprites\spr_strangerDangerNegative</sprite>
+      <sprite>sprites\spr_strangerDangerMurdered</sprite>
       <sprite>sprites\spr_strangerDangerPositive</sprite>
     </sprites>
+    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\spr_send</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -153,9 +394,8 @@
     <font>fonts\fnt_title</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_menu</object>
     <objects name="End">
-      <object>objects\draw_ending</object>
+      <object>objects\obj_ending</object>
       <object>objects\obj_continue</object>
     </objects>
     <object>objects\obj_start</object>
@@ -163,23 +403,30 @@
       <objects name="Message">
         <object>objects\obj_messagePlayer</object>
         <object>objects\obj_option</object>
-        <object>objects\draw_border</object>
         <object>objects\obj_messageOther</object>
       </objects>
       <objects name="Controllers">
         <object>objects\objControl</object>
         <object>objects\obj_convo</object>
         <object>objects\obj_mouseDrag</object>
-        <object>objects\par_convo</object>
+        <object>objects\obj_send</object>
+        <object>objects\obj_back</object>
       </objects>
+    </objects>
+    <objects name="Menu">
+      <object>objects\obj_menu</object>
+      <object>objects\obj_levelSelect</object>
+    </objects>
+    <objects name="Draw">
+      <object>objects\obj_drawBanner</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rom_menu</room>
+    <room>rooms\rom_message</room>
     <room>rooms\rom_test</room>
     <room>rooms\rom_base</room>
     <room>rooms\rom_ending</room>
-    <room>rooms\rom_menu</room>
-    <room>rooms\rom_message</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

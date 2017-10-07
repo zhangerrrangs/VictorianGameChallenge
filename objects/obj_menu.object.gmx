@@ -7,7 +7,190 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Story variables
+global.blackmail = ds_map_create();
+ds_map_add(global.blackmail, "name", "Unknown");
+ds_map_add(global.blackmail, "initials", "??");
+ds_map_add(global.blackmail, "dialog", "Blackmail-Dialog.txt");
+ds_map_add(global.blackmail, "spritePositive", spr_blackmailPositive);
+//Fix spr_blackmailDead
+ds_map_add(global.blackmail, "spriteDead", spr_blackmailPositive);
+ds_map_add(global.blackmail, "spriteMurdered", spr_blackmailMurdered);
+ds_map_add(global.blackmail, "textPositive", "Blackmail_Dead-Outcome.txt");
+ds_map_add(global.blackmail, "textDead", "Blackmail_Dead-outcome.txt");
+ds_map_add(global.blackmail, "textMurdered", "Blackmail_Murdered-outcome.txt");
+
+global.racism = ds_map_create();
+ds_map_add(global.racism, "name", "Brady Jones");
+ds_map_add(global.racism, "initials", "BJ");
+ds_map_add(global.racism, "dialog", "Racism-Dialog.txt");
+ds_map_add(global.racism, "spritePositive", spr_racismPositive);
+ds_map_add(global.racism, "spriteNegative", spr_racismNegative);
+ds_map_add(global.racism, "textPositive", "Racism_Positive.txt");
+ds_map_add(global.racism, "textNegative", "Racism_Negative.txt");
+
+global.strangerDanger = ds_map_create();
+ds_map_add(global.strangerDanger, "name", "Unknown");
+ds_map_add(global.strangerDanger, "initials", "??");
+ds_map_add(global.strangerDanger, "dialog", "StrangerDanger-Dialog.txt");
+ds_map_add(global.strangerDanger, "spritePositive", spr_strangerDangerPositive);
+//Fix spr_strangerDangerBlock
+ds_map_add(global.strangerDanger, "spriteBlock", spr_strangerDangerPositive);
+ds_map_add(global.strangerDanger, "spriteMurdered", spr_strangerDangerMurdered);
+ds_map_add(global.strangerDanger, "textPositive", "StrangerDanger_Positive-Outcome.txt");
+ds_map_add(global.strangerDanger, "textBlock", "StrangerDanger_Block-Outcome.txt");
+ds_map_add(global.strangerDanger, "textMurdered", "StrangerDanger_Murdered-Outcome.txt");
+
+global.privacy = ds_map_create();
+ds_map_add(global.privacy, "name", "hunter202");
+ds_map_add(global.privacy, "initials", "HT");
+ds_map_add(global.privacy, "dialog", "Privacy-Dialog.txt");
+ds_map_add(global.privacy, "spritePositive", spr_privacyPositive);
+//Fix spr_privacyNegative
+ds_map_add(global.privacy, "spriteNegative", spr_privacyBroke);
+ds_map_add(global.privacy, "spriteBroke", spr_privacyBroke);
+ds_map_add(global.privacy, "textPositive", "Privacy_Positive-outcome.txt");
+ds_map_add(global.privacy, "textNegative", "Privacy_Negative-outcome.txt");
+ds_map_add(global.privacy, "textBroke", "Privacy_Broke-outcome.txt");
+
+global.bodyImage = ds_map_create();
+ds_map_add(global.bodyImage, "name", "Poki Mane");
+ds_map_add(global.bodyImage, "initials", "PM");
+ds_map_add(global.bodyImage, "dialog", "BodyImage-Dialog.txt");
+ds_map_add(global.bodyImage, "spritePositive", spr_bodyImagePositive);
+ds_map_add(global.bodyImage, "spriteAbstain", spr_bodyImageAbstain);
+//Fix spr_bodyImageBlock
+ds_map_add(global.bodyImage, "spriteBlock", spr_bodyImageAbstain);
+ds_map_add(global.bodyImage, "textPositive", "BodyImage_Positive.txt");
+ds_map_add(global.bodyImage, "textAbstain", "BodyImage_Abstain.txt");
+ds_map_add(global.bodyImage, "textBlock", "BodyImage_Block.txt");
+
+//ds_map_add(global.bodyImage, "name", ""
+//global.storySelected[? "name"] = 21;
+//ds_map_add
+
+/*
+for(var i=0;i&lt;array_length_1d(global.storyName);i++) {
+   ds_map_add(global.story, global.storyName[@ i], ); 
+}
+*/
+//show_debug_message(global.story[? "name"]);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///GUI/messages variables
+global.NPCdirectory="Dialog\";
+global.endingDirectory = "Ending\";
+global.ending = "";
+
+global.levelSelectHeight = view_hview[0] * 0.1;
+
+global.optionSelected = -1;
+global.playerSpeaking = false;
+
+global.delay = room_speed * 0.75;
+
+global.padding = 10;
+global.max_width = view_wview[0] * 0.4;
+global.font = fnt_base;
+global.fontTitle = fnt_title;
+global.font_size = font_get_size(global.font);
+global.icon_size = ((global.font_size/2) + (global.padding * 2));
+global.newLineSpacing = global.font_size+(global.font_size / 2);
+
+global.optionBoxSize = view_hview[0]*0.333;
+global.optionBoxStart = view_hview[0] - global.optionBoxSize;
+global.optionMaxWidth = view_wview[0] - (global.padding * 2);
+global.bannerSize = view_hview[0] * 0.1;
+
+global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
+global.messagePlayerAlign = view_wview[0] - global.padding;
+global.optionAlign = global.padding * 4;
+
+global.firstMessage = undefined;
+global.newMessage = undefined;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create obj_level
+
+global.story[0] = global.blackmail;
+global.story[1] = global.racism; 
+global.story[2] = global.strangerDanger;
+global.story[3] = global.bodyImage;
+global.story[4] = global.privacy;  
+
+
+draw_set_font(global.font);
+
+for(i=0;i&lt;array_length_1d(global.story);i++) {
+    var height = (global.levelSelectHeight * i) + global.bannerSize;
+    var levelID = instance_create(0, height, obj_levelSelect);
+    with(levelID) {
+        story = global.story[other.i];
+    }
+}
+
+//global.storySelected = global.blackmail
+global.bannerName = "Messages";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

@@ -59,8 +59,6 @@ icon_color = $D5E233;
 receiving = true;
 
 alarm[0] = global.delay;
-
-draw_set_circle_precision(64);
 </string>
           </argument>
         </arguments>
@@ -85,7 +83,7 @@ draw_set_circle_precision(64);
             <kind>1</kind>
             <string>///Move on
 if(receiving) {
-    with(convoID) {
+    with(obj_convo) {
         scrNPCDialogContinue();
         scr_convoContinue();
     }
@@ -117,6 +115,7 @@ icon_x = x - ((global.icon_size) + (global.padding * 2));
 icon_y = y + (global.icon_size);
     
 draw_set_alpha(1);
+draw_set_circle_precision(64);
 draw_set_color(icon_color);
 
 draw_circle(icon_x, icon_y, global.icon_size, false);
@@ -125,7 +124,7 @@ draw_set_color(c_white);
 draw_set_font(global.font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
-draw_text(icon_x - (global.icon_size - global.padding), icon_y, "PN")
+draw_text(icon_x - (global.icon_size - global.padding), icon_y, global.storySelected[? "initials"])
 </string>
           </argument>
         </arguments>
@@ -153,6 +152,7 @@ if (alpha &lt; 1) alpha += (0.000005 * delta_time); else alpha = 1;
 if (x &lt; xAlignment) x += (0.0002 * delta_time) else x = xAlignment;
 
 draw_set_color(color);
+draw_set_circle_precision(64);
 //draw_rectangle(x, y, x + box_width, y + box_height, false);
 
 //Other options

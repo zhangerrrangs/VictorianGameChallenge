@@ -58,8 +58,6 @@ color = $D5E233;
 receiving = true;
 
 alarm[0] = global.delay;
-
-draw_set_circle_precision(64);
 </string>
           </argument>
         </arguments>
@@ -84,7 +82,7 @@ draw_set_circle_precision(64);
             <kind>1</kind>
             <string>///Move on
 if(receiving) {
-    with(convoID) {
+    with(obj_convo) {
         scrNPCDialogContinue();
         scr_convoContinue();
     }
@@ -118,10 +116,12 @@ if (alpha &lt; 1) alpha += (0.000005 * delta_time); else alpha = 1;
 if (x &gt; xAlignment) x -= (0.0002 * delta_time) else x = xAlignment;
 
 draw_set_color(color);
+draw_set_circle_precision(64);
 //draw_rectangle(x, y, x + box_width, y + box_height, false);
 
 //Other options
 //draw_sprite_stretched(sprite, subimg, x, y, w, h);
+draw_rectangle(x, y, x - box_width/2, y + box_height/2, true);
 draw_roundrect_ext(x, y, x - box_width, y + box_height, 25, 25, false);
 
 draw_set_color(c_black);

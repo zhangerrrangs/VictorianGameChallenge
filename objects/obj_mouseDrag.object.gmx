@@ -57,7 +57,7 @@ minSpeed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !global.newMessage.receiving) {
+            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !global.newMessage.receiving &amp;&amp; global.newMessage != undefined) {
     grabbed = true;
     lastMouse_y = mouse_y
     ydragStart = mouse_y;

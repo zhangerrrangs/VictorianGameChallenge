@@ -49,9 +49,14 @@ global.bannerSize = view_hview[0] * 0.1;
 global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
 global.messagePlayerAlign = view_wview[0] - global.padding;
 global.optionAlign = global.padding * 4;
-global.firstMessage = -1;
-global.newMessage = -1;
-global.newMessage.receiving = false;
+
+global.optionSelected = -1;
+global.firstMessage = undefined;
+global.newMessage = undefined;
+
+//show_debug_message(object_get_name(global.firstMessage));
+//global.newMessage.receiving = false;
+pid = global.storySelected[? "dialog"];
 //global.newMessage.y = global.bannerSize + global.padding;
 </string>
           </argument>
@@ -149,8 +154,10 @@ load_npcChat(pid);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create obj_mouseDrag
+            <string>///Create objects
 instance_create(0, 0, obj_mouseDrag);
+instance_create(0, 0, obj_send);
+//objSend.convoID = self.id;
 
 
 </string>

@@ -31,8 +31,6 @@ x = global.optionAlign;
 color = $EAEAEA; 
 colorSelected = $D5E233;
 optionID = -1;
-
-draw_set_circle_precision(64);
 </string>
           </argument>
         </arguments>
@@ -57,33 +55,16 @@ draw_set_circle_precision(64);
             <kind>1</kind>
             <string>///Option control
 
-if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left)) {
-    //global.optionSelected = optionID;
+if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !global.newMessage.receiving) {
+    global.optionSelected = optionID;
+    //global.receiving = true;
     //Hook into transistion
     //global.newMessage.receiving = true;
-    
-    distanceToStart = (global.optionBoxStart) - global.newMessage.y -  global.newMessage.box_height - (global.padding * 4);
-    with(obj_messagePlayer) {
-        y += other.distanceToStart
-    }
-    
-    with(obj_messageOther) {
-        y += other.distanceToStart
-    }
-    
     //global.newMessage = scr_createBox(text, global.optionBoxStart, obj_messagePlayer, global.max_width);
     //global.newMessage.convoID = convoID;
     //global.newMessage.transition = true;
     
     //scr_moveMessage(text);
-    
-    with(convoID) {
-        //show_debug_message("Redo");
-        //scr_addMessage(other.text, obj_messagePlayer);
-        scrNPCDialogOption(other.optionID);
-        scr_convoContinue();
-        //game_save("Save.dat");
-    }
 }
 </string>
           </argument>
@@ -119,9 +100,16 @@ if(global.newMessage.receiving) {
 
 //Other options
 //draw_sprite_stretched(sprite, subimg, x, y, w, h);
+draw_set_circle_precision(64);
 if(global.optionSelected == optionID) {
     draw_set_color(colorSelected);
-    draw_roundrect_ext(x - global.padding/2, y - global.padding/2, x + box_width + global.padding/2, y + box_height + global.padding/2, 20, 25, false);
+    draw_roundrect_ext(
+    x - global.padding/2,
+    y - global.padding/2, 
+    x + box_width + global.padding/2, 
+    y + box_height + global.padding/2, 20, 25, 
+    false
+);
 }
 
 draw_set_color(color);

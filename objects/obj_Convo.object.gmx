@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>par_convo</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,25 +25,89 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set name for the conversation
-pid = "5";
+            <string>///Load game save
+if(file_exists("Save.dat")) {
+    //game_load("Save.dat");
+}
 </string>
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
-        <id>604</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_inherited</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Load conversation from file
+on0=0;
+on1=0;
+
+for(i=0;i&lt;255;i++){
+    for(a=0;a&lt;50;a++){
+        line[i,a]="";//text
+        op0[i,a]=-1;//ds_list - stores which dialog it will jump to (eg: 1,0)
+        op1[i,a]=-1;//ds_list - stores text options (eg: "Who are you?")
+    }
+}
+
+checkAmount=0;//amount of "convo(QuestID,QuestStep)" you have in your dialog tree
+for(i=0;i&lt;100;i++){
+    checkQuest[i]=-1;    //QuestID to check
+    checkON[i]=-1;       //Quest Step to check
+    checkText0[i]=-1;    //Equivalent to on0
+    checkText1[i]=-1;    //Equivalent to on1
+}
+
+lblAmount=0;
+for(i=0;i&lt;100;i++){
+    lbl[i]=-1
+    lblText0[i]=-1
+    lblText1[i]=-1
+}
+
+chatMap=ds_map_create() //Map used for [var=xxx] tag!
+//show_debug_message(global.storySelected[? "dialog"]);
+load_npcChat(global.storySelected[? "dialog"]);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Create objects
+instance_create(0, 0, obj_mouseDrag);
+instance_create(0, 0, obj_send);
+//objSend.convoID = self.id;
+
+
+</string>
+          </argument>
+        </arguments>
       </action>
     </event>
   </events>
