@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-3</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -55,8 +55,8 @@ optionID = -1;
             <kind>1</kind>
             <string>///Option control
 
-if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !global.newMessage.receiving) {
-    global.optionSelected = optionID;
+if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !obj_convo.newMessage.receiving) {
+    obj_convo.optionSelected = optionID;
     //global.receiving = true;
     //Hook into transistion
     //global.newMessage.receiving = true;
@@ -89,7 +89,7 @@ if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &am
           <argument>
             <kind>1</kind>
             <string>///Draw box
-if(global.newMessage.receiving) {
+if(obj_convo.newMessage.receiving) {
     draw_set_alpha(0.50);
 } else {
     draw_set_alpha(1)
@@ -101,7 +101,7 @@ if(global.newMessage.receiving) {
 //Other options
 //draw_sprite_stretched(sprite, subimg, x, y, w, h);
 draw_set_circle_precision(64);
-if(global.optionSelected == optionID) {
+if(obj_convo.optionSelected == optionID) {
     draw_set_color(colorSelected);
     draw_roundrect_ext(
     x - global.padding/2,

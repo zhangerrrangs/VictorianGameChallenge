@@ -1,1 +1,1 @@
-global.playerSpeaking = argument0;
+obj_convo.playerSpeaking = argument0;

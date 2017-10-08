@@ -52,8 +52,8 @@ arrowColor = $FFFFFF;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; global.optionSelected != -1) {
-    distanceToStart = (global.optionBoxStart) - global.newMessage.y -  global.newMessage.box_height - (global.padding * 4);
+            <string>if(position_meeting(mouse_x, mouse_y, self) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; obj_convo.optionSelected != -1) {
+    distanceToStart = (global.optionBoxStart) - obj_convo.newMessage.y -  obj_convo.newMessage.box_height - (global.padding * 4);
     with(obj_messagePlayer) {
         y += other.distanceToStart
     }
@@ -65,11 +65,12 @@ arrowColor = $FFFFFF;
     with(obj_convo) {
         //show_debug_message("Redo");
         //scr_addMessage(other.text, obj_messagePlayer);
-        scrNPCDialogOption(global.optionSelected);
+        scrNPCDialogOption(optionSelected);
         scr_convoContinue();
         //game_save("Save.dat");
     }
-    global.optionSelected = -1;
+    
+    obj_convo.optionSelected = -1;
 }
 </string>
           </argument>

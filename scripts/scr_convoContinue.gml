@@ -10,7 +10,7 @@ if p=0 {
     str=string_copy(line[on0,on1],1,p-1)
 }
 
-show_debug_message(str);
+show_debug_message(string(on0) + " " + string(on1));
 //show_debug_message(string(on0) + " " + string(on1));
 //Move global if into just the variable
 if(playerSpeaking)
@@ -24,18 +24,18 @@ if(playerSpeaking)
 
 //global.newMessageSpawn = global.newMessage.y + scr_boxHeight(str) + (global.padding* 4)
 
-global.newMessage = scr_createBox(str, global.optionBoxStart, objType, global.max_width);
+newMessage = scr_createBox(str, global.optionBoxStart, objType, global.max_width);
 //global.newMessage.convoID = id;
 
-if(global.firstMessage == undefined) {
-    global.firstMessage = global.newMessage;
+if(firstMessage == undefined) {
+    firstMessage = newMessage;
 }
 
 scr_moveMessage(str);
 
 if (ds_exists(op0[on0,on1],ds_type_list) && ds_list_size(op0[on0,on1])>0){
     instance_destroy(obj_option);
-    global.newMessage.receiving = false;
+    newMessage.receiving = false;
     //global.receiving = false;
     
     optionSizes[0] = 0;

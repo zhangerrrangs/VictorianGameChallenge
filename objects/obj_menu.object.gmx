@@ -120,8 +120,6 @@ global.ending = "";
 
 global.levelSelectHeight = view_hview[0] * 0.1;
 
-global.optionSelected = -1;
-
 global.delay = room_speed * 0.75;
 
 global.padding = 10;
@@ -140,9 +138,6 @@ global.bannerSize = view_hview[0] * 0.1;
 global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
 global.messagePlayerAlign = view_wview[0] - global.padding;
 global.optionAlign = global.padding * 4;
-
-global.firstMessage = undefined;
-global.newMessage = undefined;
 </string>
           </argument>
         </arguments>

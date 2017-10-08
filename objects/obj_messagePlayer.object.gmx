@@ -82,7 +82,6 @@ alarm[0] = global.delay;
             <kind>1</kind>
             <string>///Move on
 if(receiving) {
-    show_debug_message("worked");
     with(obj_convo) {
         scrNPCDialogContinue();
         scr_convoContinue();

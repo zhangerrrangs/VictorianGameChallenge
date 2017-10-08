@@ -57,7 +57,7 @@ minSpeed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !global.newMessage.receiving &amp;&amp; global.newMessage != undefined) {
+            <string>if(point_in_rectangle(mouse_x, mouse_y, 0, global.bannerSize, view_wview[0], view_hview[0] - global.optionBoxSize) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !obj_convo.newMessage.receiving &amp;&amp; obj_convo.newMessage != undefined) {
     grabbed = true;
     lastMouse_y = mouse_y
     ydragStart = mouse_y;
@@ -113,31 +113,27 @@ if(y + other.ySpeed + box_height &gt; optionPos) {
 } 
 */
 
-if(global.firstMessage != -1) {
-    with(global.firstMessage) {
+with(obj_convo.firstMessage) {
+
+    var yStop = global.bannerSize + global.padding;
+    //Make globals consistent:font
+    if(y + other.ySpeed &gt; yStop) {
+        distanceToBanner = (global.bannerSize + global.padding) - y;
+        scr_dragMessage(distanceToBanner);
     
-        var yStop = global.bannerSize + global.padding;
-        //Make globals consistent:font
-        if(y + other.ySpeed &gt; yStop) {
-            distanceToBanner = (global.bannerSize + global.padding) - y;
-            scr_dragMessage(distanceToBanner);
-        
-            other.ySpeed = 0;
-        }
+        other.ySpeed = 0;
     }
 }
 
-if(global.newMessage != -1) {
-    with(global.newMessage) {
-        //var bottom_y = y + box_height;
-        var yStop = global.optionBoxStart - (global.padding * 4) - self.box_height;
-        //if(bottom_y + other.ySpeed &gt; global.optionBoxStart) {
-        if(y + other.ySpeed &lt; yStop) {
-            distanceToOption = yStop - y;
-            scr_dragMessage(distanceToOption);
-            
-            other.ySpeed = 0;
-        }
+with(obj_convo.newMessage) {
+    //var bottom_y = y + box_height;
+    var yStop = global.optionBoxStart - (global.padding * 4) - self.box_height;
+    //if(bottom_y + other.ySpeed &gt; global.optionBoxStart) {
+    if(y + other.ySpeed &lt; yStop) {
+        distanceToOption = yStop - y;
+        scr_dragMessage(distanceToOption);
+        
+        other.ySpeed = 0;
     }
 }
 
