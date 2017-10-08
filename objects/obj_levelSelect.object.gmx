@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>icon_y = global.padding + global.icon_size;
 icon_x = global.padding + global.icon_size;
+
+newRoom = 0;
 </string>
           </argument>
         </arguments>
@@ -53,14 +55,15 @@ icon_x = global.padding + global.icon_size;
     global.storySelected = story;
     global.bannerName = story[? "name"];
     
-    if (ds_map_exists(story, "room")) {
-        room_goto(story[? "room"]);
-    } else {
-        var newRoom = room_duplicate(rom_message);
-        ds_map_add(story, "room", newRoom);
-        room_goto(newRoom);
+    if(newRoom == 0) {
+        newRoom = room_duplicate(rom_message);
     }
+    
+    show_debug_message(newRoom);
+    
+    room_goto(newRoom);
 }
+
 </string>
           </argument>
         </arguments>
