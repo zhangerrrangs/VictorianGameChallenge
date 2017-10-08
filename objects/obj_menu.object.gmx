@@ -121,7 +121,7 @@ global.ending = "";
 
 global.levelSelectHeight = view_hview[0] * 0.1;
 
-global.delay = room_speed * 0.75;
+global.delay = room_speed * 1.5;
 
 global.padding = 10;
 global.max_width = view_wview[0] * 0.4;

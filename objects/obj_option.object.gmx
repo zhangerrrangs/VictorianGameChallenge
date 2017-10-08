@@ -57,6 +57,7 @@ optionID = -1;
 
 if(point_in_rectangle(mouse_x, mouse_y, x, y, x + box_width, y + box_height) &amp;&amp; mouse_check_button_pressed(mb_left) &amp;&amp; !obj_convo.newMessage.receiving) {
     obj_convo.optionSelected = optionID;
+    audio_play_sound(son_messageSend, 20, false);
     //global.receiving = true;
     //Hook into transistion
     //global.newMessage.receiving = true;
