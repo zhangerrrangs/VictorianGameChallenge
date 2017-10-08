@@ -28,8 +28,9 @@
             <string>with(obj_convo) {
     //scr_gotoEnding("Positive");
     //event_user(0);
-    scr_convoContinue();
+    //scr_convoContinue();
     //room_goto(rom_test);
+    scr_gotoEnding("Negative");
 }
 instance_destroy(self);
 </string>

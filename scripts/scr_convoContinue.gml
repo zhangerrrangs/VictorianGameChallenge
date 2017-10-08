@@ -10,7 +10,7 @@ if p=0 {
     str=string_copy(line[on0,on1],1,p-1)
 }
 
-show_debug_message(string(on0) + " " + string(on1));
+//show_debug_message(string(on0) + " " + string(on1));
 //show_debug_message(string(on0) + " " + string(on1));
 //Move global if into just the variable
 if(playerSpeaking)

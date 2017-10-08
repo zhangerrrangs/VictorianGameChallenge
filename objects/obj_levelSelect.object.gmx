@@ -52,8 +52,13 @@ icon_x = global.padding + global.icon_size;
             <string>if(point_in_rectangle(mouse_x, mouse_y, x, y, view_wview[0], y + global.levelSelectHeight) &amp;&amp; mouse_check_button_pressed(mb_left)) {
     global.storySelected = story;
     global.bannerName = story[? "name"];
-    var newRoom = room_duplicate(rom_message);
-    room_goto(newRoom);
+    
+    if (ds_map_exists(story, "room")) {
+        room_goto(story[? "room"]);
+    } else {
+        var newRoom = room_duplicate(rom_message);
+        ds_map_add(story, "room", newRoom);
+    }
 }
 </string>
           </argument>

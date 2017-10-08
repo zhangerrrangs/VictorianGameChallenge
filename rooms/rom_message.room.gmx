@@ -7,7 +7,7 @@
   <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>15395562</colour>
   <showcolour>-1</showcolour>
   <code></code>
@@ -53,6 +53,7 @@
   <instances>
     <instance objName="obj_convo" x="800" y="1376" name="inst_978F01DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_drawBanner" x="256" y="1248" name="inst_8F40AD2B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_back" x="224" y="224" name="inst_47C094A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -3,12 +3,12 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="35" name="datafiles">
-    <datafiles number="35" name="Dialog">
+  <datafiles number="40" name="datafiles">
+    <datafiles number="40" name="Dialog">
       <datafile>
         <name>Blackmail-Dialog.txt</name>
         <exists>-1</exists>
-        <size>8100</size>
+        <size>8373</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -21,57 +21,6 @@
           </Config>
         </ConfigOptions>
         <filename>Blackmail-Dialog.txt</filename>
-      </datafile>
-      <datafile>
-        <name>Privacy-Dialog.txt</name>
-        <exists>-1</exists>
-        <size>3766</size>
-        <exportAction>2</exportAction>
-        <exportDir></exportDir>
-        <overwrite>0</overwrite>
-        <freeData>-1</freeData>
-        <removeEnd>0</removeEnd>
-        <store>0</store>
-        <ConfigOptions>
-          <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-        </ConfigOptions>
-        <filename>Privacy-Dialog.txt</filename>
-      </datafile>
-      <datafile>
-        <name>Racism-Dialog.txt</name>
-        <exists>-1</exists>
-        <size>4231</size>
-        <exportAction>2</exportAction>
-        <exportDir></exportDir>
-        <overwrite>0</overwrite>
-        <freeData>-1</freeData>
-        <removeEnd>0</removeEnd>
-        <store>0</store>
-        <ConfigOptions>
-          <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-        </ConfigOptions>
-        <filename>Racism-Dialog.txt</filename>
-      </datafile>
-      <datafile>
-        <name>StrangerDanger-Dialog.txt</name>
-        <exists>-1</exists>
-        <size>4194</size>
-        <exportAction>2</exportAction>
-        <exportDir></exportDir>
-        <overwrite>0</overwrite>
-        <freeData>-1</freeData>
-        <removeEnd>0</removeEnd>
-        <store>0</store>
-        <ConfigOptions>
-          <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-        </ConfigOptions>
-        <filename>StrangerDanger-Dialog.txt</filename>
       </datafile>
       <datafile>
         <name>BodyImage-Dialog.txt</name>
@@ -90,8 +39,59 @@
         </ConfigOptions>
         <filename>BodyImage-Dialog.txt</filename>
       </datafile>
+      <datafile>
+        <name>Privacy-Dialog.txt</name>
+        <exists>-1</exists>
+        <size>3778</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Privacy-Dialog.txt</filename>
+      </datafile>
+      <datafile>
+        <name>Racism-Dialog.txt</name>
+        <exists>-1</exists>
+        <size>4329</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Racism-Dialog.txt</filename>
+      </datafile>
+      <datafile>
+        <name>StrangerDanger-Dialog.txt</name>
+        <exists>-1</exists>
+        <size>4196</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>StrangerDanger-Dialog.txt</filename>
+      </datafile>
     </datafiles>
-    <datafiles number="35" name="Ending">
+    <datafiles number="40" name="Ending">
       <datafile>
         <name>StrangerDanger_Positive-outcome.txt</name>
         <exists>-1</exists>
@@ -360,6 +360,7 @@
     </sprites>
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\spr_send</sprite>
+    <sprite>sprites\spr_back</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

@@ -1,4 +1,4 @@
-[text]
+﻿[text]
 text[0,0]=(OPTION): Hello there, is this [var=name]?
 op0[0,0]=Yes hello, I am [var=name].:Who is this?:
 op1[0,0]=0,1|scr_playerSpeaking(true)|:0,41|scr_playerSpeaking(true)|:
@@ -62,7 +62,7 @@ text[1,18]=Wrong, you got money, you pay me money.|scr_playerSpeaking(true)|
 text[2,18]=How much do you want?|scr_playerSpeaking(false)|line(1,5)|
 text[0,20]=I have never been to Bali.|scr_playerSpeaking(false)|
 text[1,20]=Don't lie to me! I have evidence!|scr_playerSpeaking(true)|
-text[2,20]=W噶头hat evidence?|scr_playerSpeaking(false)|
+text[2,20]=What evidence?|scr_playerSpeaking(false)|
 text[3,20]=I have access to your criminal record.|scr_playerSpeaking(true)|
 text[4,20]=...|scr_playerSpeaking(false)|line(5,4)|
 text[0,22]=I have no idea what you're talking about.|scr_playerSpeaking(false)|
