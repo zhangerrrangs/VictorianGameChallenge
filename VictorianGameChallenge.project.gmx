@@ -40,7 +40,7 @@
         <filename>Privacy-Dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>Racism-DIalog.txt</name>
+        <name>Racism-Dialog.txt</name>
         <exists>-1</exists>
         <size>4231</size>
         <exportAction>2</exportAction>
@@ -54,7 +54,7 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>Racism-DIalog.txt</filename>
+        <filename>Racism-Dialog.txt</filename>
       </datafile>
       <datafile>
         <name>StrangerDanger-Dialog.txt</name>
@@ -365,7 +365,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_gotoEnding.gml</script>
-    <script>scripts\scr_changeMessageYPos.gml</script>
+    <script>scripts\scr_dragMessage.gml</script>
     <script>scripts\scr_createBox.gml</script>
     <script>scripts\scr_convoContinue.gml</script>
     <script>scripts\scr_boxWidth.gml</script>
@@ -422,9 +422,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rom_test</room>
     <room>rooms\rom_menu</room>
     <room>rooms\rom_message</room>
-    <room>rooms\rom_test</room>
     <room>rooms\rom_base</room>
     <room>rooms\rom_ending</room>
   </rooms>

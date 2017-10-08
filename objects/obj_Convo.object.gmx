@@ -25,6 +25,62 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///GUI/messages variables
+global.NPCdirectory="Dialog\";
+global.endingDirectory = "Ending\";
+global.ending = "";
+
+global.levelSelectHeight = view_hview[0] * 0.1;
+
+global.optionSelected = -1;
+
+global.delay = room_speed * 0.75;
+
+global.padding = 10;
+global.max_width = view_wview[0] * 0.4;
+global.font = fnt_base;
+global.fontTitle = fnt_title;
+global.font_size = font_get_size(global.font);
+global.icon_size = ((global.font_size/2) + (global.padding * 2));
+global.newLineSpacing = global.font_size+(global.font_size / 2);
+
+global.optionBoxSize = view_hview[0]*0.333;
+global.optionBoxStart = view_hview[0] - global.optionBoxSize;
+global.optionMaxWidth = view_wview[0] - (global.padding * 2);
+global.bannerSize = view_hview[0] * 0.1;
+
+global.messageOtherAlign = ((global.icon_size + global.padding) * 2) + global.padding;
+global.messagePlayerAlign = view_wview[0] - global.padding;
+global.optionAlign = global.padding * 4;
+
+global.firstMessage = undefined;
+global.newMessage = undefined;
+
+playerSpeaking = false;
+
+global.bannerName = "smex";
+global.storySelected = ds_map_create();
+ds_map_add(global.storySelected, "initials", "PK");
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Load game save
 if(file_exists("Save.dat")) {
     //game_load("Save.dat");
@@ -78,7 +134,8 @@ for(i=0;i&lt;100;i++){
 
 chatMap=ds_map_create() //Map used for [var=xxx] tag!
 //show_debug_message(global.storySelected[? "dialog"]);
-load_npcChat(global.storySelected[? "dialog"]);
+pid = "Racism-Dialog.txt";
+load_npcChat(pid);
 </string>
           </argument>
         </arguments>
@@ -105,6 +162,30 @@ instance_create(0, 0, obj_send);
 //objSend.convoID = self.id;
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move on
+scr_convoContinue();
 </string>
           </argument>
         </arguments>

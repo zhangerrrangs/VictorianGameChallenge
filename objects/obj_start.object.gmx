@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>with(obj_convo) {
     //scr_gotoEnding("Positive");
-    scr_convoContinue();
+    event_user(0);
     //room_goto(rom_test);
 }
 instance_destroy(self);

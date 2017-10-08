@@ -121,7 +121,6 @@ global.ending = "";
 global.levelSelectHeight = view_hview[0] * 0.1;
 
 global.optionSelected = -1;
-global.playerSpeaking = false;
 
 global.delay = room_speed * 0.75;
 

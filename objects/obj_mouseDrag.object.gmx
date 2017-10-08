@@ -120,7 +120,7 @@ if(global.firstMessage != -1) {
         //Make globals consistent:font
         if(y + other.ySpeed &gt; yStop) {
             distanceToBanner = (global.bannerSize + global.padding) - y;
-            scr_changeMessageYPos(distanceToBanner);
+            scr_dragMessage(distanceToBanner);
         
             other.ySpeed = 0;
         }
@@ -134,14 +134,14 @@ if(global.newMessage != -1) {
         //if(bottom_y + other.ySpeed &gt; global.optionBoxStart) {
         if(y + other.ySpeed &lt; yStop) {
             distanceToOption = yStop - y;
-            scr_changeMessageYPos(distanceToOption);
+            scr_dragMessage(distanceToOption);
             
             other.ySpeed = 0;
         }
     }
 }
 
-scr_changeMessageYPos(ySpeed);
+scr_dragMessage(ySpeed);
 </string>
           </argument>
         </arguments>

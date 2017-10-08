@@ -13,7 +13,7 @@ if p=0 {
 show_debug_message(str);
 //show_debug_message(string(on0) + " " + string(on1));
 //Move global if into just the variable
-if(global.playerSpeaking)
+if(playerSpeaking)
 {
     //var xTextSpawn = view_wview[0];
     var objType = obj_messagePlayer;
