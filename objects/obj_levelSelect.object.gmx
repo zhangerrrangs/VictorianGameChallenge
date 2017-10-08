@@ -58,6 +58,7 @@ icon_x = global.padding + global.icon_size;
     } else {
         var newRoom = room_duplicate(rom_message);
         ds_map_add(story, "room", newRoom);
+        room_goto(newRoom);
     }
 }
 </string>
