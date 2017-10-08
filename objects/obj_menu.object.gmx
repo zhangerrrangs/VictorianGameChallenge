@@ -28,6 +28,7 @@
             <string>///Story variables
 global.blackmail = ds_map_create();
 ds_map_add(global.blackmail, "name", "Unknown");
+ds_map_add(global.blackmail, "room", rom_blackmail);
 ds_map_add(global.blackmail, "initials", "??");
 ds_map_add(global.blackmail, "dialog", "Blackmail-Dialog.txt");
 ds_map_add(global.blackmail, "spritePositive", spr_blackmailPositive);
@@ -40,6 +41,7 @@ ds_map_add(global.blackmail, "textMurdered", "Blackmail_Murdered-outcome.txt");
 
 global.racism = ds_map_create();
 ds_map_add(global.racism, "name", "Brady Jones");
+ds_map_add(global.racism, "room", rom_racism);
 ds_map_add(global.racism, "initials", "BJ");
 ds_map_add(global.racism, "dialog", "Racism-Dialog.txt");
 ds_map_add(global.racism, "spritePositive", spr_racismPositive);
@@ -49,18 +51,20 @@ ds_map_add(global.racism, "textNegative", "Racism_Negative-outcome.txt");
 
 global.strangerDanger = ds_map_create();
 ds_map_add(global.strangerDanger, "name", "Unknown");
+ds_map_add(global.strangerDanger, "room", rom_strangerDanger);
 ds_map_add(global.strangerDanger, "initials", "??");
 ds_map_add(global.strangerDanger, "dialog", "StrangerDanger-Dialog.txt");
 ds_map_add(global.strangerDanger, "spritePositive", spr_strangerDangerPositive);
 //Fix spr_strangerDangerBlock
 ds_map_add(global.strangerDanger, "spriteBlock", spr_strangerDangerMurdered);
 ds_map_add(global.strangerDanger, "spriteMurdered", spr_strangerDangerMurdered);
-ds_map_add(global.strangerDanger, "textPositive", "StrangerDanger_Positive-Outcome.txt");
+ds_map_add(global.strangerDanger, "textPositive", "StrangerDanger_Positive-outcome.txt");
 ds_map_add(global.strangerDanger, "textBlock", "StrangerDanger_Block-Outcome.txt");
 ds_map_add(global.strangerDanger, "textMurdered", "StrangerDanger_Murdered-Outcome.txt");
 
 global.privacy = ds_map_create();
 ds_map_add(global.privacy, "name", "hunter202");
+ds_map_add(global.privacy, "room", rom_privacy);
 ds_map_add(global.privacy, "initials", "HT");
 ds_map_add(global.privacy, "dialog", "Privacy-Dialog.txt");
 ds_map_add(global.privacy, "spritePositive", spr_privacyPositive);
@@ -73,6 +77,7 @@ ds_map_add(global.privacy, "textBroke", "Privacy_Broke-outcome.txt");
 
 global.bodyImage = ds_map_create();
 ds_map_add(global.bodyImage, "name", "Poki Mane");
+ds_map_add(global.bodyImage, "room", rom_bodyImage);
 ds_map_add(global.bodyImage, "initials", "PM");
 ds_map_add(global.bodyImage, "dialog", "BodyImage-Dialog.txt");
 ds_map_add(global.bodyImage, "spritePositive", spr_bodyImagePositive);

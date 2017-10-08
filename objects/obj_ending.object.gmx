@@ -26,13 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///Calculate positions
-
-fileName = global.storySelected[? "text"+global.ending]
+fileName = global.storySelected[? "text" + global.ending];
 fileID = file_text_open_read(global.endingDirectory + fileName);
 text = file_text_read_string(fileID);
 file_text_close(fileID);
 
-image = global.storySelected[? "sprite"+global.ending];
+image = global.storySelected[? "sprite" + global.ending];
 
 draw_set_font(global.font);
 totalHeight = sprite_get_height(image) + string_height_ext(text, global.newLineSpacing, view_wview[0] - global.padding * 4) + (global.padding * 6) + view_hview[0] * 0.1;

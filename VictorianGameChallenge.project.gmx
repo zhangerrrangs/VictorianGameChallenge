@@ -3,12 +3,12 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="40" name="datafiles">
-    <datafiles number="40" name="Dialog">
+  <datafiles number="51" name="datafiles">
+    <datafiles number="51" name="Dialog">
       <datafile>
-        <name>Blackmail-Dialog.txt</name>
+        <name>Blackmail-dialog.txt</name>
         <exists>-1</exists>
-        <size>8373</size>
+        <size>8353</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -20,12 +20,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>Blackmail-Dialog.txt</filename>
+        <filename>Blackmail-dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>BodyImage-Dialog.txt</name>
+        <name>BodyImage-dialog.txt</name>
         <exists>-1</exists>
-        <size>3850</size>
+        <size>3988</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -37,12 +37,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>BodyImage-Dialog.txt</filename>
+        <filename>BodyImage-dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>Privacy-Dialog.txt</name>
+        <name>Privacy-dialog.txt</name>
         <exists>-1</exists>
-        <size>3778</size>
+        <size>3770</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -54,12 +54,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>Privacy-Dialog.txt</filename>
+        <filename>Privacy-dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>Racism-Dialog.txt</name>
+        <name>Racism-dialog.txt</name>
         <exists>-1</exists>
-        <size>4329</size>
+        <size>4313</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -71,12 +71,12 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>Racism-Dialog.txt</filename>
+        <filename>Racism-dialog.txt</filename>
       </datafile>
       <datafile>
-        <name>StrangerDanger-Dialog.txt</name>
+        <name>StrangerDanger-dialog.txt</name>
         <exists>-1</exists>
-        <size>4196</size>
+        <size>4184</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -88,10 +88,10 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>StrangerDanger-Dialog.txt</filename>
+        <filename>StrangerDanger-dialog.txt</filename>
       </datafile>
     </datafiles>
-    <datafiles number="40" name="Ending">
+    <datafiles number="51" name="Ending">
       <datafile>
         <name>StrangerDanger_Positive-outcome.txt</name>
         <exists>-1</exists>
@@ -421,7 +421,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_menu</room>
-    <room>rooms\rom_message</room>
+    <room>rooms\rom_racism</room>
+    <room>rooms\rom_strangerDanger</room>
+    <room>rooms\rom_privacy</room>
+    <room>rooms\rom_bodyImage</room>
+    <room>rooms\rom_blackmail</room>
     <room>rooms\rom_ending</room>
   </rooms>
   <help>

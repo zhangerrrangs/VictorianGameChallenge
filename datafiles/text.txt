@@ -1,0 +1,5 @@
+[text]
+text[0,0]=sex|scr_gotoEnding('Positive');|
+[config]
+[vars]
+vars=

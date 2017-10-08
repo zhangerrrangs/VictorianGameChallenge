@@ -1,5 +1,5 @@
 [text]
-text[0,0]=(OPTION): Hi is this [var=name]?
+text[0,0]=(OPTION): Hi is this Scott Connex?
 op0[0,0]=Yes that's me.:No.:
 op1[0,0]=0,1|scr_playerSpeaking(true)|:0,32|scr_playerSpeaking(true)|:
 text[0,1]=Yes that's me.|scr_playerSpeaking(false)|
@@ -23,23 +23,18 @@ op1[1,4]=0,5|scr_playerSpeaking(true)|:0,9|scr_playerSpeaking(true)|:
 text[0,5]=Oh ok.|scr_playerSpeaking(false)|
 text[1,5]=I'll pick you up in 5 min at the main gate.
 text[2,5]=(OPTION): I'll be in th blue Mazda, so give me a wave when you see me.
+op1[2,5]=0,6|scr_gotoEnding(Block)|:0,7|scr_gotoEnding(Dead)|:
 op0[2,5]=BLOCK AND TELL A TEACHER:GO TO THE MAIN GATE:
-op1[2,5]=0,6|:0,7|:
-text[0,6]=YOU WIN
-text[0,7]=YOU DIE
 text[0,9]=Actually I don't need a ride.|scr_playerSpeaking(false)|
 text[1,9]=Are you sure?
 text[2,9]=(OPTION): I don't want something bad to happen to you.
 op0[2,9]=BLOCK AND TELL A TEACHER:Actually, can you pick me up?:
-op1[2,9]=0,10|:0,11|scr_playerSpeaking(true)|:
-text[0,10]=YOU WIN
+op1[2,9]=0,10|scr_gotoEnding(Block)|:0,11|scr_playerSpeaking(true)|:
 text[0,11]=Actually can you pick me up?|scr_playerSpeaking(false)|
 text[1,11]=Ok, I'll meet you in 5 min at the main gates.
 text[2,11]=(OPTION): I'll be in the blue Mazda, so give me a wave when you see me.
+op1[2,11]=0,12|scr_gotoEnding(Dead)|:0,13|scr_gotoEnding(Block)|:
 op0[2,11]=GO TO THE MAIN GATE:BLOCK AND TELL A TEACHER:
-op1[2,11]=0,12|:0,13|:
-text[0,12]=YOU DIE
-text[0,13]=YOU WIN
 text[0,17]=No I don't.|scr_playerSpeaking(false)|
 text[1,17]=Your mum specifically told me where you were.
 text[2,17]=(OPTION): Do you want a ride or not?
@@ -69,11 +64,7 @@ text[1,32]=(OPTION): Really? Your mum told me this was your messenger username.
 op0[1,32]=Oh well, that's me.:Sorry, you've got the wrong person.:
 op1[1,32]=0,33|scr_playerSpeaking(true)|:0,34|scr_playerSpeaking(true)|:
 text[0,33]=Oh well, that's me.|scr_playerSpeaking(false)|line(2,1)|
-text[0,34]=(OPTION): Sorry, you've got the wrong person.
-op0[0,34]=KEEP THE MESSAGE:DELETE THE MESSAGE:
-op1[0,34]=0,35|:0,36|:
-text[0,35]=YOU LOSE
-text[0,36]=YOU WIN
+text[0,34]=Sorry, you've got the wrong person.|scr_gotoEnding(Positive)|
 [config]
 [vars]
 vars=
