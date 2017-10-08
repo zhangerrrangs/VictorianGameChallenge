@@ -1,0 +1,13 @@
+[text]
+text[0,0]=Be me
+text[1,0]=See me|scr_playerSpeaking(false)|
+text[2,0]=Fear me
+text[3,0]=Know me
+text[4,0]=(OPTION): 4
+op0[4,0]=4:4:
+op1[4,0]=0,1|:0,2|:
+text[0,1]=nubnboonnoo
+text[0,2]=rrrr
+[config]
+[vars]
+vars=
