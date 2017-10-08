@@ -212,7 +212,7 @@
         <filename>Bodyimage_Block-outcome.txt</filename>
       </datafile>
       <datafile>
-        <name>BodyImage_Positve-outcome.txt</name>
+        <name>BodyImage_Positive-outcome.txt</name>
         <exists>-1</exists>
         <size>376</size>
         <exportAction>2</exportAction>
@@ -226,7 +226,7 @@
             <CopyToMask>9223372036854775807</CopyToMask>
           </Config>
         </ConfigOptions>
-        <filename>BodyImage_Positve-outcome.txt</filename>
+        <filename>BodyImage_Positive-outcome.txt</filename>
       </datafile>
       <datafile>
         <name>Privacy_Broke-outcome.txt</name>

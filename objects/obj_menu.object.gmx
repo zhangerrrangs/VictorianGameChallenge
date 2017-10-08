@@ -32,7 +32,6 @@ ds_map_add(global.blackmail, "room", rom_blackmail);
 ds_map_add(global.blackmail, "initials", "??");
 ds_map_add(global.blackmail, "dialog", "Blackmail-Dialog.txt");
 ds_map_add(global.blackmail, "spritePositive", spr_blackmailPositive);
-//Fix spr_blackmailDead
 ds_map_add(global.blackmail, "spriteDead", spr_blackmailMurdered);
 ds_map_add(global.blackmail, "spriteMurdered", spr_blackmailMurdered);
 ds_map_add(global.blackmail, "textPositive", "Blackmail_Dead-Outcome.txt");
@@ -55,7 +54,6 @@ ds_map_add(global.strangerDanger, "room", rom_strangerDanger);
 ds_map_add(global.strangerDanger, "initials", "??");
 ds_map_add(global.strangerDanger, "dialog", "StrangerDanger-Dialog.txt");
 ds_map_add(global.strangerDanger, "spritePositive", spr_strangerDangerPositive);
-//Fix spr_strangerDangerBlock
 ds_map_add(global.strangerDanger, "spriteBlock", spr_strangerDangerMurdered);
 ds_map_add(global.strangerDanger, "spriteMurdered", spr_strangerDangerMurdered);
 ds_map_add(global.strangerDanger, "textPositive", "StrangerDanger_Positive-outcome.txt");
@@ -68,7 +66,6 @@ ds_map_add(global.privacy, "room", rom_privacy);
 ds_map_add(global.privacy, "initials", "HT");
 ds_map_add(global.privacy, "dialog", "Privacy-Dialog.txt");
 ds_map_add(global.privacy, "spritePositive", spr_privacyPositive);
-//Fix spr_privacyNegative
 ds_map_add(global.privacy, "spriteNegative", spr_privacyBroke);
 ds_map_add(global.privacy, "spriteBroke", spr_privacyBroke);
 ds_map_add(global.privacy, "textPositive", "Privacy_Positive-outcome.txt");
@@ -82,7 +79,6 @@ ds_map_add(global.bodyImage, "initials", "PM");
 ds_map_add(global.bodyImage, "dialog", "BodyImage-Dialog.txt");
 ds_map_add(global.bodyImage, "spritePositive", spr_bodyImagePositive);
 ds_map_add(global.bodyImage, "spriteAbstain", spr_bodyImageAbstain);
-//Fix spr_bodyImageBlock
 ds_map_add(global.bodyImage, "spriteBlock", spr_bodyImageAbstain);
 ds_map_add(global.bodyImage, "textPositive", "BodyImage_Positive-outcome.txt");
 ds_map_add(global.bodyImage, "textAbstain", "BodyImage_Abstain-outcome.txt");
