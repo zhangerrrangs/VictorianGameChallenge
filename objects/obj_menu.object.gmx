@@ -119,7 +119,7 @@ global.NPCdirectory="Dialog\";
 global.endingDirectory = "Ending\";
 global.ending = "";
 
-global.levelSelectHeight = view_hview[0] * 0.1;
+global.levelSelectHeight = view_hview[0] * 0.135;
 
 global.delay = room_speed * 1.5;
 

@@ -117,7 +117,7 @@ draw_set_valign(fa_middle);
 
 draw_text(x + (global.padding * 2) + (global.icon_size * 2), y + global.padding + global.icon_size, story[? "name"]);
 
-draw_line_width_color(x, y + global.levelSelectHeight, view_wview[0], y + global.levelSelectHeight, global.padding/4, $D5E233, $EAEAEA);
+draw_line_width_color(x, y + global.levelSelectHeight, view_wview[0], y + global.levelSelectHeight, global.padding/4, $D5E233, $D5E233);
 
 </string>
           </argument>
